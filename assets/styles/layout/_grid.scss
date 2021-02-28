@@ -1,0 +1,46 @@
+.header{
+    display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1.5fr 0.5fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "header__logo-box header__empty-1 header__empty-1 header__nav-button"
+    "header__text-box header__text-box header__text-box header__text-box"
+    "header__empty-2 header__signup-button header__login-button header__empty-3";
+    justify-items: center;
+
+
+    &__logo-box { grid-area: header__logo-box; }
+    &__text-box { grid-area: header__text-box; }
+    &__signup-button { grid-area: header__signup-button; }
+    &__login-button { grid-area: header__login-button; }
+    &__nav-button { grid-area: header__nav-button; }
+    &__empty-1 { grid-area: header__empty-1; }
+    &__empty-2 { grid-area: header__empty-2; }
+    &__empty-3 { grid-area: header__empty-3; }
+}
+
+.section-overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 3rem 1rem;
+  grid-template-areas:
+    ". section-overview__photo-1 . section-overview__text-1 section-overview__text-1 section-overview__text-1 ."
+    ". . section-overview__text-2 section-overview__text-2 section-overview__text-2 section-overview__photo-2 ."
+    ". section-overview__photo-3 . section-overview__text-3 section-overview__text-3 section-overview__text-3 ."
+    ". . section-overview__text-4 section-overview__text-4 section-overview__text-4 section-overview__photo-4 ."
+    ". section-overview__photo-5 . section-overview__text-5 section-overview__text-5 section-overview__text-5 .";
+    
+
+    &__photo-1 { grid-area: section-overview__photo-1; }
+    &__text-1 { grid-area: section-overview__text-1; }
+    &__photo-2 { grid-area: section-overview__photo-2; }
+    &__text-2 { grid-area: section-overview__text-2; }
+    &__photo-3 { grid-area: section-overview__photo-3; }
+    &__text-3 { grid-area: section-overview__text-3; }
+    &__text-4 { grid-area: section-overview__text-4; }
+    &__text-5 { grid-area: section-overview__text-5; }
+    &__photo-4 { grid-area: section-overview__photo-4; }
+    &__photo-5 { grid-area: section-overview__photo-5; }
+}

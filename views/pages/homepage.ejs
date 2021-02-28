@@ -1,75 +1,43 @@
-<!--
-This is your default homepage.
-For more information, see:
-• https://sailsjs.com/documentation/concepts/views
-• https://sailsjs.com/documentation/concepts/routes
--->
-<link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
-
-<script type="text/javascript">
-setTimeout(function sunrise () {
-  document.getElementsByClassName('header')[0].style.backgroundColor = '#118798';
-}, 0);
-</script>
-
-<div class="default-page">
-  <div class="header">
-    <h1 id="main-title" class="container"><%= __('A brand new app.') %></h1>
-    <h3 class="container">You're looking at: <code><%= view.pathFromApp + '.' +view.ext %></code></h3>
+<header class="header">
+  <div class="header__logo-box"></div>
+  <div class="header__nav-button"></div>
+  <div class="header__text-box">
+    <h1 class="heading-primary">
+      <span class="heading-primary--main">VideoClub</span>
+      <span class="heading-primary--sub">Watch your favorite movies anytime anywhere</span>
+    </h1>
   </div>
-  <div class="main container clearfix">
-    <ul class="getting-started">
-      <li class="clearfix first">
-        <div class="step">
-          <div class="sprite one"></div>
-          <h3>Get your bearings</h3>
-          <p>
-            If you're new to Sails, get started <a href="https://sailsjs.com/get-started">here</a>.
-            <br/>
-            <small>(You'll learn about the framework and explore the files that were generated in this new app.)</small>
-          </p>
-        </div>
-      </li>
-      <li class="clearfix">
-        <div class="step">
-          <div class="sprite two"></div>
-          <h3>Lift your app</h3>
-          <p>
-            Looks like you already ran <code>sails lift</code> to start up your app server. Nice work!
-            <br/>
-            <small>(Remember to re-lift after making backend code changes.)</small>
-          </p>
-        </div>
-      </li>
-      <li class="clearfix">
-        <div class="step">
-          <div class="sprite three"></div>
-          <h3>Dive in</h3>
-          <p>
-            Blueprints are just the beginning.  You'll probably also want to learn how to customize your app's <a href="https://sailsjs.com/documentation/concepts/routes">routes</a>, build custom <a target="_blank" href="https://sailsjs.com/documentation/concepts/actions-and-controllers">actions</a>, set up <a href="https://sailsjs.com/documentation/concepts/policies">security policies</a>, configure your <a href="https://sailsjs.com/documentation/reference/configuration/sails-config-datastores">data sources</a>, and deploy to <a href="http://sailsjs.com/documentation/concepts/deployment">production</a>.
-            <br/>
-            <small>(For more help getting started, check out the links on this page.)</small>
-          </p>
-        </div>
-      </li>
-    </ul>
-    <div class="links">
-      <ul class="link-list">
-
-        <h4>Documentation</h4>
-        <li><a target="_blank" href="https://sailsjs.com/whats-that">About the framework</a></li>
-        <li><a target="_blank" href="https://sailsjs.com/documentation/anatomy">App structure</a></li>
-        <li><a target="_blank" href="https://sailsjs.com/documentation/concepts/extending-sails/adapters/available-adapters">Supported databases</a></li>
-        <li><a target="_blank" href="https://sailsjs.com/documentation/concepts/upgrading">Version notes</a></li>
-
-        <h4>More resources</h4>
-        <li><a target="_blank" href="https://sailsjs.com/enterprise">Professional / enterprise</a></li>
-        <li><a target="_blank" href="https://sailsjs.com/support">Community support options</a></li>
-        <li><a target="_blank" href="https://sailsjs.com/documentation/contributing">Contribute</a></li>
-        <li><a target="_blank" href="https://sailsjs.com/resources">Logos/artwork</a></li>
-        <li><a target="_blank" href="https://twitter.com/sailsjs">News</a></li>
-
-      </ul>
-    </div>
+  <div class="header__signup-button">
+    <a href="/signup" class="btn btn--white btn--animated-left">Signup</a>
   </div>
-</div>
+  <div class="header__login-button ">
+    <a href="#" class="btn btn--white btn--animated-right">Login</a>
+  </div>
+</header>
+<main>
+  <section class="section-overview">
+    <div class="section-overview__photo section-overview__photo-1"></div>
+    <div class="section-overview__text section-overview__text-1">Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Eaque exercitationem
+      esse reprehenderit. Quibusdam, eaque? Neque facere praesentium voluptatum consequatur possimus.</div>
+    <div class="section-overview__photo section-overview__photo-2"></div>
+    <div class="section-overview__text section-overview__text-2">Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Sequi consequuntur
+      est excepturi et eveniet harum quaerat eligendi laborum, dignissimos debitis?</div>
+    <div class="section-overview__photo section-overview__photo-3"></div>
+    <div class="section-overview__text section-overview__text-3">Lorem, ipsum dolor sit amet consectetur adipisicing
+      elit. Reprehenderit
+      necessitatibus veniam ab accusantium deserunt molestias perferendis doloribus minima omnis soluta!</div>
+    <div class="section-overview__photo section-overview__photo-4"></div>
+    <div class="section-overview__text section-overview__text-4">Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Facere velit quam
+      quidem consequuntur possimus non dignissimos nulla harum, sequi dolorem!</div>
+    <div class="section-overview__photo section-overview__photo-5"></div>
+    <div class="section-overview__text section-overview__text-5">Lorem ipsum dolor sit, amet consectetur adipisicing
+      elit. Dolore, ullam. Neque
+      nobis facere adipisci necessitatibus praesentium, temporibus alias nihil dolore.</div>
+  </section>
+</main>
+<footer class="footer">
+
+</footer>

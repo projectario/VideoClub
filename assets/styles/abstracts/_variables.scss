@@ -1,0 +1,30 @@
+$color-primary: #892b64;
+$color-primary-light: #a01a58;
+$color-primary-dark: #723c70;
+
+$color-secondary-light: #2e6f95;
+$color-secondary-dark: #455e89;
+
+$color-tertiary-light: #80b918;
+$color-tertiary-dark: #55a630;
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
+$color-error: #c55a1c;
+
+$color-grey-dark: #1a141a;
+$color-white: #fff;
+$color-black: #000;
+
+$default-font-size: 1.6rem;
+
+$box-shadow-light-allaround: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+$box-shadow-middle-allaround: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+$box-shadow-intense-allaround: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+$box-shadow-intense-blr: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+$box-shadow-intense-bl: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+
+$clip-path-triangle: polygon(50% 0%, 0% 100%, 100% 100%);
+$clip-path-square: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+$clip-path-polygon: polygon(0 0, 100% 0%, 100% 80%, 0 100%);
