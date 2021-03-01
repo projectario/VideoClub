@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
     title: { type: 'string' },
     genre: { type: 'string' },
-    price: { type: 'numeric' },
+    price: { type: 'number' },
     description: { type: 'string' },
     releasedDate: { type: 'string' },
 
