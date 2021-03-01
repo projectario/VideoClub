@@ -53,7 +53,7 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
 
-  // migrate: 'alter',
+  migrate: 'alter',
 
 
   /***************************************************************************
@@ -72,7 +72,10 @@ module.exports.models = {
     id: { type: 'number', autoIncrement: true, },
     createdAt: { type: 'number', autoCreatedAt: true, },
     updatedAt: { type: 'number', autoUpdatedAt: true, },
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3b773a530dff33b2c0289e736fae58f8a91591fa
     //--------------------------------------------------------------------------
     //  /\   Using MongoDB?
     //  ||   Replace `id` above with this instead:
