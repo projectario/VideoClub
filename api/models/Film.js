@@ -12,9 +12,14 @@ module.exports = {
     genre: { type: 'string' },
     price: { type: 'number' },
     description: { type: 'string' },
-    releasedDate: { type: 'string' },
+    releasedDate: { type: 'string' }, // type??
+    rating: { type: 'number' },
+    posterUrl: { type: 'string' },
 
-
+    rents: {
+      collection: 'Rent',
+      via: 'filmId'
+    }
 
   },
 
