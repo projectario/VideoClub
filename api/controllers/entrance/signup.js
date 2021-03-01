@@ -31,10 +31,12 @@ module.exports = {
       let newUser = await User.create({ firstName, lastName, email, password })
       this.res.redirect('/');
     }
-    else { }
+    else { 
+      this.res.status(406)
+      return this.res.view('entrance/view-signup')
+    }
     // All done.
-    this.res.status(406)
-    return this.res.view('entrance/view-signup')
+    
   }
 
 
