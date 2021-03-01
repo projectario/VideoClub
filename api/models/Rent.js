@@ -8,6 +8,7 @@
 module.exports = {
   tableName: 'rents',
   attributes: {
+    totalPrice: { type: 'number' },
     userId: {
       model: 'User'
     },
