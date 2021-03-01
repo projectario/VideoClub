@@ -13,6 +13,7 @@ module.exports = {
     price: { type: 'numeric' },
     description: { type: 'string' },
     releasedDate: { type: 'string' },
+    rating: {}
 
 
 
