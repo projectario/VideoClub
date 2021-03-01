@@ -20,7 +20,7 @@
 
 
 
-.form-image{
+.form-image-adult{
    
     height: 35vh;
     background-image: url(../images/comp-1-rem.png);
@@ -32,6 +32,31 @@
     transition: all 0.8s ease-in-out;
 
 } 
+
+.form-image-kids{
+    @extend .form-image-adult;
+    background-image: url(../images/kids-rem.png);
+    background-size: 105%;
+}
+
+.checkbox{
+    &__container{
+        @include flex-row;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        label{
+            color: $color-primary;
+            font-size: $default-font-size;
+            padding-right: .5rem;
+        }
+    }
+    &__box{
+        padding: 1.5rem;
+        outline: none;
+    }
+}
+
 
 // .form-container:hover .form-image{
 //     background-size: 100%;
