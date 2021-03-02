@@ -1,13 +1,13 @@
 const ageChecker = document.querySelector('#age');
-const signupImage = document.querySelector('.form-image');
+const signupImage = document.querySelector('.form__image');
 
 function checkAge() {
     if (ageChecker.checked) {
-        signupImage.classList.remove('form-image-adult');
-        signupImage.classList.add('form-image-kids');
+        signupImage.classList.remove('form__image-adult');
+        signupImage.classList.add('form__image-kids');
     } else {
-        signupImage.classList.remove('form-image-kids');
-        signupImage.classList.add('form-image-adult');
+        signupImage.classList.remove('form__image-kids');
+        signupImage.classList.add('form__image-adult');
     }
 }
 
