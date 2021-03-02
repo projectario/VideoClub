@@ -13,7 +13,8 @@ module.exports = {
     lastName: { type: 'string' },
     email: { type: 'string' },
     password: { type: 'string' },
-    confirmPassword: { type: 'string' }
+    confirmPassword: { type: 'string' },
+    isAdult: { type: 'boolean' },
   },
 
 
