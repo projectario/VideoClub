@@ -44,3 +44,15 @@
     &__photo-4 { grid-area: section-overview__photo-4; }
     &__photo-5 { grid-area: section-overview__photo-5; }
 }
+
+.navbar{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 7vh;
+  gap: 0px 0px;
+  grid-template-areas:
+  "navbar__logo . . . navbar__login";
+
+  &__logo { grid-area: navbar__logo; }
+  &__login { grid-area: navbar__login; }
+}

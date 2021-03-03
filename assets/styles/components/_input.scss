@@ -6,7 +6,6 @@
     border: none;
     border-radius: 3px;
     margin-bottom: 1.5rem;
-    // width: 90%;
     transition: all .1s;
     background-color: #ecf0f0;
     box-shadow: $box-shadow-light-allaround;
@@ -31,4 +30,22 @@
         margin-bottom: .8rem;
     }
     
+}
+
+.checkbox{
+    &__container{
+        @include flex-row;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        label{
+            color: $color-primary;
+            font-size: $default-font-size;
+            padding-right: .5rem;
+        }
+    }
+    &__box{
+        padding: 1.5rem;
+        outline: none;
+    }
 }
