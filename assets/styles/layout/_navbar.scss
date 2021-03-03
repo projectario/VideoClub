@@ -9,7 +9,7 @@
         @include gradient(0.7);
     }
 
-    &__logo{ 
+    &__logo, &__faq, &__login{ 
         text-align: center;
         font-size: $default-font-size;
         letter-spacing: .5rem;
@@ -23,11 +23,6 @@
         &:hover{
             transform: translateY(-.3rem);
         }
-    }
-
-    &__login{
-        @extend .navbar__logo;
-        margin-right: 5vw;
     }
     
 }
