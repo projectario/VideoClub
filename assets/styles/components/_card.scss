@@ -1,0 +1,48 @@
+.movie{
+    &__card{
+        background-image: url(../images/movie.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 25vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
+        // transition: all .4s ease-in-out;
+
+        &-title{
+            visibility: hidden;
+            color: $color-white;
+            letter-spacing: 0.4rem;
+            font-size: $default-font-size;
+            background-color: $color-black;
+            height: 5vh;
+            margin-top: 20vh;
+            // transition: all .4s ease;
+            width: 100%;
+            text-align: center;
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+    
+
+        // &:hover{
+        //     background-image: linear-gradient(
+        //     to right bottom,
+        //     rgba($color-primary-light, .6),
+        //     rgba($color-primary-dark, .6)), url(../images/movie.jpg);
+        // }
+
+        &:hover &-title{
+            visibility: visible;
+            animation: fadeIn 0.4s ease;
+
+        }
+
+    }
+
+    
+
+}
+
