@@ -20,6 +20,18 @@
     &__empty-3 { grid-area: header__empty-3; }
 }
 
+.header__movies {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "header__movies-prev . . header__movies-next";
+}
+.header__movies-prev { grid-area: header__movies-prev; }
+.header__movies-next { grid-area: header__movies-next; }
+
+
 .section-overview {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -47,12 +59,22 @@
 
 .navbar{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 7vh;
   gap: 0px 0px;
   grid-template-areas:
-  "navbar__logo . . . navbar__login";
+  "navbar__logo . . . navbar__faq navbar__login";
 
   &__logo { grid-area: navbar__logo; }
+  &__faq { grid-area: navbar__faq; }
   &__login { grid-area: navbar__login; }
+
+}
+
+.movie__list{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 3rem 2rem;
+  grid-auto-rows: 25vh;
+  margin: 5vh 3vw;
 }
