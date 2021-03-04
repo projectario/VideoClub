@@ -7,9 +7,11 @@
     <section class="form__container-login">
         <form action="POST1`" class="form__container-login--form">
             <h4 class="heading-secondary">Login</h4>
-            <input id="email" class="input" type="email" placeholder="E-Mail Address">
-            <input id="password" class="input" type="password" placeholder="Password">
+            <input id="email" class="input" type="email" placeholder="E-Mail Address"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+            <input id="password" class="input" type="password" placeholder="Password" required>
             <a href="" class="btn btn-text">Forgot Password?</a>
+            <p class="heading-secondary error"></p>
             <button class="btn btn-form">Login</button>
         </form>
     </section>

@@ -20,6 +20,18 @@
     &__empty-3 { grid-area: header__empty-3; }
 }
 
+.header__movies {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "header__movies-prev . . header__movies-next";
+}
+.header__movies-prev { grid-area: header__movies-prev; }
+.header__movies-next { grid-area: header__movies-next; }
+
+
 .section-overview {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;

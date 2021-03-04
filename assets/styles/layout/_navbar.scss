@@ -1,5 +1,6 @@
 .navbar{
-    @include gradient(0.7);
+    @include gradient(0.6);
+    // background-color: rgba($color-primary-dark, .9);
     @include flex-row;
     align-items: center;
     box-shadow: $box-shadow-light-allaround;
@@ -9,7 +10,7 @@
         // text-align: center;
         font-size: $default-font-size;
         letter-spacing: .5rem;
-        transition: all 0.4s ease-in-out;
+        transition: all 0.1s ease-in-out;
         margin: 0 3vw;
         a{
             text-decoration: none;
