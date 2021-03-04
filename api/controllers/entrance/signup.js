@@ -23,6 +23,7 @@ module.exports = {
 
   fn: async function ({firstName, lastName, email, password, confirmPassword, isAdult}) {
     console.log(firstName, lastName, email, password, confirmPassword, isAdult);
+    this.email = email.toLowerCase(); // this propably works
     var isUser = await User.findOne({email: email});
     if (isUser) this.res.alreadyExists("<h2> Email already in use! </h2>");
     else {
