@@ -9,12 +9,12 @@ module.exports = {
 
 
   inputs: {
-    firstName: { type: 'string' },
-    lastName: { type: 'string' },
-    email: { type: 'string' },
-    password: { type: 'string' },
-    confirmPassword: { type: 'string' },
-    isAdult: { type: 'boolean' },
+    firstName: { type: 'string', required: true},
+    lastName: { type: 'string', required: true},
+    email: { type: 'string', required: true},
+    password: { type: 'string', required: true},
+    confirmPassword: { type: 'string', required: true},
+    isAdult: { type: 'boolean', required: true},
   },
 
 
