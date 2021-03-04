@@ -21,6 +21,7 @@ module.exports.routes = {
 
   'GET /': { view: 'pages/homepage' },
   'GET /login': { view: 'pages/entrance/login' },
+  'GET /movies': { view: 'pages/movies' },
   'GET /signup': { action: 'entrance/view-signup' },
   'POST /signup': { action: 'entrance/signup' },
 
