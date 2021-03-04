@@ -1,3 +1,6 @@
+//TODO
+// <--- bcrypt HERE
+
 module.exports = {
 
 
@@ -14,17 +17,20 @@ module.exports = {
 
 
   exits: {
-    success: {
-      viewTemplatePath: 'pages/entrance/login'
-    }
+    // success: {
+    //   viewTemplatePath: 'pages/entrance/login'
+    // }
+
   },
 
 
   fn: async function ({ email, password }) {
-    console.log(email, password)
     let isUser = await User.findOne({ email: email.toLowerCase() });
+
+    //Check to see if we have this user id the database
     if (!isUser) return this.res.emailDoesNotExist('<h1>We dont know anyone that goes by that name! Try Again!</h1>'); // custom response about not matching email?
 
+    // then find the user and match the provided password with the one in the database
     else if (isUser) {
       let user = await User.findOne({ email: email })
       sails.log(user.password)
