@@ -15,11 +15,7 @@ module.exports = {
     password: { type: 'string', required: true },
   },
 
-  exits: {
-    success:{
-      viewTemplatePath: 'pages/content/movies'
-    }
-  },
+  exits: {},
 
 
  
@@ -40,7 +36,7 @@ module.exports = {
         sails.log("LOGGED IN!!")
         sails.log(this.req.session.userId);
         sails.log(this.req.me);
-        return exits.success()
+        return this.res.redirect('/movies')
       }
       else {
         return this.res.passwordsDontMatch("<h1>Passwords not match!!!</h1>")
