@@ -33,15 +33,15 @@ module.exports = {
 
       let match = false
       match = await bcrypt.compare(password, user.password)
-      console.log(password)
-      console.log(user.password)
+      
       sails.log(user.password)
 
       if (match) {
-
+        
         sails.log("LOGGED IN!!")
-        sails.log(this.req.session.userId);
         // sails.log(this.req.me);
+        this.req.session.userId = user.id;
+        
         return this.res.redirect('/movies')
       }
       else {
