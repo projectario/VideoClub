@@ -14,7 +14,7 @@ module.exports = {
     email: { type: 'string', required: true},
     password: { type: 'string', required: true},
     confirmPassword: { type: 'string', required: true},
-    isAdult: { type: 'boolean', required: true},
+    isAdult: { type: 'boolean',},
   },
 
 
@@ -22,13 +22,13 @@ module.exports = {
 
 
   fn: async function ({firstName, lastName, email, password, confirmPassword, isAdult}) {
-    console.log(firstName, lastName, email, password, confirmPassword, isAdult);
+    sails.log(firstName, lastName, email, password, confirmPassword, isAdult);
     this.email = email.toLowerCase(); // this propably works
     var isUser = await User.findOne({email: email});
     if (isUser) this.res.alreadyExists("<h2> Email already in use! </h2>");
     else {
       if (password == confirmPassword) {
-        await User.create({firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword})
+        await User.create({firstName, lastName, email, password, isAdult})
         this.res.redirect('/')
       }
       else {
