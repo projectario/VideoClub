@@ -18,7 +18,7 @@ module.exports = {
   exits: {},
 
 
- 
+
 
 
   fn: async function ({ email, password }, exits) {
@@ -35,7 +35,7 @@ module.exports = {
         this.req.session.userId = user.id;
         sails.log("LOGGED IN!!")
         sails.log(this.req.session.userId);
-        sails.log(this.req.me);
+        // sails.log(this.req.me);
         return this.res.redirect('/movies')
       }
       else {
