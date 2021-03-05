@@ -15,16 +15,17 @@ module.exports = {
     password: { type: 'string', required: true },
   },
 
-
   exits: {
-    // success: {
-    //   viewTemplatePath: 'pages/entrance/login'
-    // }
-
+    success:{
+      viewTemplatePath: 'pages/homepage'
+    }
   },
 
 
-  fn: async function ({ email, password }) {
+ 
+
+
+  fn: async function ({ email, password }, exits) {
     let isUser = await User.findOne({ email: email.toLowerCase() });
 
     //Check to see if we have this user id the database
@@ -33,13 +34,13 @@ module.exports = {
     // then find the user and match the provided password with the one in the database
     else if (isUser) {
       let user = await User.findOne({ email: email })
-      sails.log(user.password)
 
       if (user.password === password) {
-        sails.log("LOGGED IN!!")
         this.req.session.userId = user.id;
+        sails.log("LOGGED IN!!")
         sails.log(this.req.session.userId);
         sails.log(this.req.me);
+        return exits.success()
       }
       else {
         return this.res.passwordsDontMatch("<h1>Passwords not match!!!</h1>")
