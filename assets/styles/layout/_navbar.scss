@@ -1,9 +1,9 @@
 .navbar{
-    @include gradient(0.6);
-    // background-color: rgba($color-primary-dark, .9);
+    // @include gradient(0.6);
+    background-color: $color-primary-light;
     @include flex-row;
     align-items: center;
-    box-shadow: $box-shadow-light-allaround;
+    box-shadow: $box-shadow-intense-blr;
     transition: all 0.8s ease;
 
     &__logo, &__faq, &__login{ 

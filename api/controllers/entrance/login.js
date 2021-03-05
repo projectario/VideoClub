@@ -15,16 +15,13 @@ module.exports = {
     password: { type: 'string', required: true },
   },
 
-
-  exits: {
-    // success: {
-    //   viewTemplatePath: 'pages/entrance/login'
-    // }
-
-  },
+  exits: {},
 
 
-  fn: async function ({ email, password }) {
+
+
+
+  fn: async function ({ email, password }, exits) {
     let isUser = await User.findOne({ email: email.toLowerCase() });
 
     //Check to see if we have this user id the database
@@ -33,6 +30,7 @@ module.exports = {
     // then find the user and match the provided password with the one in the database
     else if (isUser) {
       let user = await User.findOne({ email: email })
+
       let match = false
       match = await bcrypt.compare(password, user.password)
       console.log(password)
@@ -40,10 +38,16 @@ module.exports = {
       sails.log(user.password)
 
       if (match) {
+
         sails.log("LOGGED IN!!")
         this.req.session.userId = user.id;
-        this.res.redirect('/');
+
+        sails.log(this.req.session.userId);
+        // sails.log(this.req.me);
+        return this.res.redirect('/movies')
+
       }
+
       else {
         return this.res.passwordsDontMatch("<h1>Passwords not match!!!</h1>")
       }
