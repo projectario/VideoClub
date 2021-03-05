@@ -1,0 +1,25 @@
+.navbar{
+    // @include gradient(0.6);
+    background-color: $color-primary-light;
+    @include flex-row;
+    align-items: center;
+    box-shadow: $box-shadow-intense-blr;
+    transition: all 0.8s ease;
+
+    &__logo, &__faq, &__login{ 
+        // text-align: center;
+        font-size: $default-font-size;
+        letter-spacing: .5rem;
+        transition: all 0.1s ease-in-out;
+        margin: 0 3vw;
+        a{
+            text-decoration: none;
+            color: $color-white;
+        }
+
+        &:hover{
+            transform: translateY(-.3rem);
+        }
+    }
+    
+}

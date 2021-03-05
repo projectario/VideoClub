@@ -20,6 +20,18 @@
     &__empty-3 { grid-area: header__empty-3; }
 }
 
+.header__movies {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "header__movies-prev . . header__movies-next";
+}
+.header__movies-prev { grid-area: header__movies-prev; }
+.header__movies-next { grid-area: header__movies-next; }
+
+
 .section-overview {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -43,4 +55,40 @@
     &__text-5 { grid-area: section-overview__text-5; }
     &__photo-4 { grid-area: section-overview__photo-4; }
     &__photo-5 { grid-area: section-overview__photo-5; }
+}
+
+.navbar{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 7vh;
+  gap: 0px 0px;
+  grid-template-areas:
+  "navbar__logo . . . navbar__faq navbar__login";
+
+  &__logo { grid-area: navbar__logo; }
+  &__faq { grid-area: navbar__faq; }
+  &__login { grid-area: navbar__login; }
+
+}
+
+.movie__list{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 3rem 2rem;
+  grid-auto-rows: 25vh;
+  margin: 5vh 3vw;
+}
+
+.container__character {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "container__character-1 container__character-2 container__character-3 container__character-4";
+
+    &-1 { grid-area: container__character-1; }
+    &-2 { grid-area: container__character-2; }
+    &-3 { grid-area: container__character-3; }
+    &-4 { grid-area: container__character-4; }
 }

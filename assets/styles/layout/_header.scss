@@ -31,21 +31,41 @@
 
     }
 
-    // &__logo-box{
-    //     position: absolute;
-    //     top: 4rem;
-    //     left: 4rem;
-    // }
-
-    // &__logo{
-    //     height: 3.5rem;
-    // }
     
-    // &__text-box{
-    //     position: absolute;
-    //     top: 40%;
-    //     left: 50%;
-    //     transform: translate(-50%, -50%);
-    //     text-align: center;
-    // }
 }
+
+// .header__movies{
+//     background-size: cover;
+//     background-position: top;
+//     color: $color-white;
+//     font-size: 1.6rem;
+//     height: 55vh;
+//     align-items: center;
+//     transition: all 0.4s ease-in-out;
+
+//     &-1{
+//         background-image: url(../images/movie.jpg);
+//     }
+
+//     &-2{
+//         background-image: url(../images/poster.jpg);
+//     }
+
+//     &-3{
+//     background-image: url(../images/movies.jpg);
+
+//     }
+
+//     &-prev, &-next{
+//         color: $color-white;
+//         font-size: 2rem;
+//         text-align: center;
+//         transition: all 0.4s ease;
+
+//         &:hover{
+//             font-size: 2.3rem;
+//             cursor: pointer;
+
+//         }
+//     }
+// }

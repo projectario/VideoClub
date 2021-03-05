@@ -6,7 +6,6 @@
     border: none;
     border-radius: 3px;
     margin-bottom: 1.5rem;
-    // width: 90%;
     transition: all .1s;
     background-color: #ecf0f0;
     box-shadow: $box-shadow-light-allaround;
@@ -14,7 +13,7 @@
 
     &:focus{
         outline: none;
-        border-bottom: 2px solid $color-secondary-dark;
+        border-bottom: 2px solid #077a70;
     }
     
     &:focus:invalid{
@@ -32,3 +31,22 @@
     }
     
 }
+
+.checkbox{
+    &__container{
+        @include flex-row;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        label{
+            color: $color-primary;
+            font-size: $default-font-size;
+            padding-right: .5rem;
+        }
+    }
+    &__box{
+        padding: 1.5rem;
+        outline: none;
+    }
+}
+

@@ -1,64 +1,75 @@
-.form-container{
-    background-color: white;
-    width: 30%;
-    margin: 12rem auto 5rem auto;
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    transition: all 0.8s ease-in-out;
-}
-
-
 .form{
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
-    padding: 3rem;
-    
-}
-
-
-
-.form-image-adult{
-   
-    height: 35vh;
-    background-image: url(../images/comp-1-rem.png);
-    background-repeat: no-repeat;
-    background-size: 95%;
-    background-position: top center;
-    margin-top: -13rem;
-    /* background-color: #264653; */
-    transition: all 0.8s ease-in-out;
-
-} 
-
-.form-image-kids{
-    @extend .form-image-adult;
-    background-image: url(../images/kids-rem.png);
-    background-size: 105%;
-}
-
-.checkbox{
     &__container{
-        @include flex-row;
+        background-color: $color-white;
+        width: 30%;
+        margin: 10vh auto ;
+        display: flex; 
+        flex-direction: column;
         justify-content: center;
-        align-items: center;
-        padding: 1rem;
-        label{
-            color: $color-primary;
-            font-size: $default-font-size;
-            padding-right: .5rem;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        transition: all 0.8s ease-in-out;
+
+        &-form{
+            @include flex-column;    
+            justify-content: center;
+            // width: 30%;
+            padding: 3rem;
+            padding-top: 2rem; 
         }
     }
-    &__box{
-        padding: 1.5rem;
-        outline: none;
-    }
-}
 
+    &__image-adult{
+        height: 30vh;
+        background-image: url(../images/comp-1-rem.png);
+        background-repeat: no-repeat;
+        background-size: 90%;
+        background-position: top center;
+        margin-top: -13rem;
+        transition: all 0.8s ease-in-out;
+    
+    } 
+
+    &__image-login{
+        @extend .form__image-adult;
+        background-image: url(../images/movieposter-rem.jpg);
+    }
+    
+    &__image-kids{
+        @extend .form__image-adult;
+        background-image: url(../images/kids-rem.png);
+        background-size: 115%;
+    }
+
+    &__container-login{
+        @include flex-row;
+        background-image:linear-gradient(105deg,
+             rgba($color-white, 1) 0%,
+             rgba($color-white, .9) 20%,
+             rgba($color-white, .8) 50%,
+             rgba($color-white, .5) 60%,
+              transparent 80%) ,
+              url(../images/poster.jpg);
+        background-size: cover;
+        background-position: right;
+        background-repeat: no-repeat;
+        margin-top: 10vh;
+        width: 40%;
+        border-radius: 3px;
+        box-shadow: $box-shadow-intense-blr;
+        justify-content: space-between;
+        padding: 3rem;
+        &--form{
+            @include flex-column;
+            justify-content: center;
+            
+        }
+    
+    }
+    
+}
 
 // .form-container:hover .form-image{
 //     background-size: 100%;
 //     transform: rotate(1deg);
 // }
+

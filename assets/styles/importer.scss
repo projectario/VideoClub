@@ -14,21 +14,23 @@
  * or any other Grunt tasks you like.)
  */
 
- @import "abstracts/mixins";
- @import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/variables";
  
- @import "base/animations";
- @import "base/base";
- @import "base/typography";
- @import "base/utilities";
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
  
- @import "components/button";
-//  @import "components/card";
-//  @import "components/composition";
+@import "components/button";
+@import "components/carousel";
+@import "components/card";
 @import "components/form";
 @import "components/input";
+@import "components/genre";
+
  
- 
+@import "layout/navbar";
 @import "layout/grid";
 @import "layout/header";
 @import "layout/footer";
@@ -36,13 +38,8 @@
  
 @import "pages/home";
 @import "pages/signup";
+@import "pages/movies";
 
 
-//  @import "themes/";
 
- // For example:
- //
- // @import 'foundation.scss';
- //
- // etc.
  

@@ -2,8 +2,6 @@
     background-color: $color-grey-light-1;
     padding: 10rem 0;
     font-size: $default-font-size;
-    // width: 80%;
-
 
     &__photo{
         box-shadow: $box-shadow-intense-allaround;
@@ -14,11 +12,11 @@
             
 
         &-1{
-            background-image: url(../images/comp-1.jpg); 
+            background-image: url(../images/signup.png); 
         }
 
         &-2{
-            background-image: url(../images/comp-2.jpg);
+            background-image: url(../images/login.png);
         }
 
         &-3{
