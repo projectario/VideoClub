@@ -1,4 +1,4 @@
-
+var bcrypt = require('bcryptjs')
 module.exports = {
 
 
@@ -28,7 +28,7 @@ module.exports = {
     if (isUser) this.res.alreadyExists("<h2> Email already in use! </h2>");
     else {
       if (password == confirmPassword) {
-        await User.create({firstName, lastName, email, password, isAdult})
+        await User.create({firstName, lastName, email, password: await bcrypt.hash(password, 12), isAdult})
         this.res.redirect('/')
       }
       else {
