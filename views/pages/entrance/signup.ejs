@@ -14,20 +14,20 @@
             </div>
             <input id="firstName" name="firstName" class="input" type="text" placeholder="First Name"
                 pattern="[A-Za-z]{1,15}" minlength="3" maxlength="15" required
-                title="Please fill out the field with 3-15 characters and no numbers">
+                title="Please fill out the field with 3-15 characters and no numbers" oninput="validateName()">
             <input id="lastName" name="lastName" class="input" type="text" placeholder="Last Name"
                 pattern="[A-Za-z]{1,15}" minlength="3" maxlength="15" required
-                title="Please fill out the field with 3-15 characters and no numbers">
+                title="Please fill out the field with 3-15 characters and no numbers" oninput="validateLastName()">
             <input id="email" name="email" class="input" type="email" placeholder="E-Mail Address"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required oninput="validateEMail()">
             <input id="password" name="password" class="input" type="password" placeholder="Password"
                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                 title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
-                required>
+                required oninput="validatePassword()">
             <input id="confirmPassword" name="confirmPassword" class="input" type="password"
                 placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                 title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
-                required>
+                required oninput="validateConfirmPassword()">
             <p class="heading-secondary error"></p>
             <button class="btn btn-form">Sign Up!</button>
         </form>

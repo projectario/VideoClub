@@ -9,12 +9,12 @@ module.exports = {
 
 
   inputs: {
-    firstName: { type: 'string' },
-    lastName: { type: 'string' },
-    email: { type: 'string' },
-    password: { type: 'string' },
-    confirmPassword: { type: 'string' },
-    isAdult: { type: 'boolean' },
+    firstName: { type: 'string', required: true},
+    lastName: { type: 'string', required: true},
+    email: { type: 'string', required: true},
+    password: { type: 'string', required: true},
+    confirmPassword: { type: 'string', required: true},
+    isAdult: { type: 'boolean', required: true},
   },
 
 
@@ -23,6 +23,7 @@ module.exports = {
 
   fn: async function ({firstName, lastName, email, password, confirmPassword, isAdult}) {
     console.log(firstName, lastName, email, password, confirmPassword, isAdult);
+    this.email = email.toLowerCase(); // this propably works
     var isUser = await User.findOne({email: email});
     if (isUser) this.res.alreadyExists("<h2> Email already in use! </h2>");
     else {
