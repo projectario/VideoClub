@@ -34,8 +34,7 @@ module.exports = {
       if (user.password === password) {
         this.req.session.userId = user.id;
         sails.log("LOGGED IN!!")
-        sails.log(this.req.session.userId);
-        sails.log(this.req.me);
+        sails.log(request.me);
         return this.res.redirect('/movies')
       }
       else {
