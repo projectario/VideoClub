@@ -40,6 +40,7 @@ module.exports = {
       if (match) {
 
         sails.log("LOGGED IN!!")
+        this.req.session.userId = user.id;
         sails.log(this.req.session.userId);
         // sails.log(this.req.me);
         return this.res.redirect('/movies')
