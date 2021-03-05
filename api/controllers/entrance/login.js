@@ -37,7 +37,9 @@ module.exports = {
 
       if (user.password === password) {
         sails.log("LOGGED IN!!")
-        this.res.redirect('/');
+        this.req.session.userId = user.id;
+        sails.log(this.req.session.userId);
+        sails.log(this.req.me);
       }
       else {
         return this.res.passwordsDontMatch("<h1>Passwords not match!!!</h1>")
