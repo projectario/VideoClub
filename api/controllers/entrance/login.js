@@ -1,5 +1,5 @@
 //TODO
-// <--- bcrypt HERE
+var bcrypt = require('bcryptjs')
 
 module.exports = {
 
@@ -23,7 +23,7 @@ module.exports = {
 
   fn: async function ({ email, password }, exits) {
     let isUser = await User.findOne({ email: email.toLowerCase() });
-
+    
     //Check to see if we have this user id the database
     if (!isUser) return this.res.emailDoesNotExist('<h1>We dont know anyone that goes by that name! Try Again!</h1>'); // custom response about not matching email?
 
@@ -31,8 +31,14 @@ module.exports = {
     else if (isUser) {
       let user = await User.findOne({ email: email })
 
-      if (user.password === password) {
-        this.req.session.userId = user.id;
+      let match = false
+      match = await bcrypt.compare(password, user.password)
+      console.log(password)
+      console.log(user.password)
+      sails.log(user.password)
+
+      if (match) {
+
         sails.log("LOGGED IN!!")
         sails.log(this.req.session.userId);
         // sails.log(this.req.me);

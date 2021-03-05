@@ -25,6 +25,7 @@ module.exports.routes = {
   'GET /signup': { action: 'entrance/view-signup' },
   'POST /signup': { action: 'entrance/signup' },
   'POST /login': { action: 'entrance/login' },
+  'GET /logout': { action: 'account/logout' }
 
 
   /***************************************************************************
