@@ -26,7 +26,7 @@ module.exports = {
 
   fn: async function ({ email, password }) {
     let isUser = await User.findOne({ email: email.toLowerCase() });
-    
+
     //Check to see if we have this user id the database
     if (!isUser) return this.res.emailDoesNotExist('<h1>We dont know anyone that goes by that name! Try Again!</h1>'); // custom response about not matching email?
 
@@ -41,6 +41,7 @@ module.exports = {
 
       if (match) {
         sails.log("LOGGED IN!!")
+        this.req.session.userId = user.id;
         this.res.redirect('/');
       }
       else {
