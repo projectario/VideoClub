@@ -8,6 +8,7 @@
  * https://sailsjs.com/docs/concepts/policies
  */
 
+
 module.exports.policies = {
 
   /***************************************************************************
@@ -17,6 +18,11 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
+  '*': 'isLoggedIn',
+
+  // Bypass the `is-logged-in` policy for:
+  'entrance/*': true,
+
+
 
 };
