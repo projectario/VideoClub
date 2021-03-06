@@ -15,17 +15,26 @@ module.exports = {
     password: { type: 'string', required: true },
   },
 
-  exits: {},
+  // we can handle redirects and responses like this now
+  exits: {
+    success: {},
+    redirect :{
+      responseType: 'redirect'
+    },
+    problem: {
+      responseType: 'emailDoesNotExist'
+    },
+  },
 
 
 
 
 
-  fn: async function ({ email, password }, exits) {
+  fn: async function ({ email, password }) {
     let isUser = await User.findOne({ email: email.toLowerCase() });
 
     //Check to see if we have this user id the database
-    if (!isUser) return this.res.emailDoesNotExist('<h1>We dont know anyone that goes by that name! Try Again!</h1>'); // custom response about not matching email?
+    if (!isUser) throw {problem : '<h1>We dont know anyone that goes by that name! Try Again!</h1>'} // custom response about not matching email?
 
     // then find the user and match the provided password with the one in the database
     else if (isUser) {
@@ -41,16 +50,17 @@ module.exports = {
         sails.log("LOGGED IN!!")
         this.req.session.userId = user.id;
 
-        sails.log(this.req.session.userId);
+        sails.log(this.req.session);
         // sails.log(this.req.me);
         
-        return this.res.redirect('/movies')
+        throw {redirect: '/movies'}
 
       }
 
       else {
-        return this.res.passwordsDontMatch("<h1>Passwords not match!!!</h1>")
+        throw {problem: "<h1>Passwords not match!!!</h1>"}
       }
+      
     }
 
   }
