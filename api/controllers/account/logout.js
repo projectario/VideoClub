@@ -35,7 +35,7 @@ module.exports = {
     fn: async function () {
 
         // Clear the `userId` property from this session.
-        delete this.req.session.userId;
+         delete this.req.session.userId;
 
         // Broadcast a message that we can display in other open tabs.
         // if (sails.hooks.sockets) {
