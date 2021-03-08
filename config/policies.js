@@ -21,8 +21,9 @@ module.exports.policies = {
   '*': 'isLoggedIn',
 
   // Bypass the `is-logged-in` policy for:
+  'view-homepage' : true, 
   'entrance/*': true,
-
+  'account/logout': true,
 
 
 };
