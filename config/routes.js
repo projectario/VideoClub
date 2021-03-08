@@ -20,13 +20,17 @@ module.exports.routes = {
   ***************************************************************************/
 
   'GET /': { action: 'view-homepage' },
-  'GET /login': { view: 'pages/entrance/login' },
+  // login
+  'GET /login': { action: 'entrance/view-login' },
+  'POST /login': { action: 'entrance/login' },
+  // movies
   'GET /movies': { action: 'content/movies' },
-  'GET /movies/kids': { view: 'pages/kidsmovies' },
-  'GET /title': { view: 'pages/movieDetail' },
+  'GET /movies/kids': { view: 'content/kidsmovies' },
+  'GET /title': { view: 'content/movieDetail' },
+  // signup
   'GET /signup': { action: 'entrance/view-signup' },
   'POST /signup': { action: 'entrance/signup' },
-  'POST /login': { action: 'entrance/login' },
+  // logout
   'GET /logout': { action: 'account/logout' }
 
 

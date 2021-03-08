@@ -31,6 +31,8 @@ module.exports = {
 
 
   fn: async function ({ email, password }) {
+
+    // if (this.req.session.userId) throw {redirect: '/movies'};
     let isUser = await User.findOne({ email: email.toLowerCase() });
 
     //Check to see if we have this user id the database
