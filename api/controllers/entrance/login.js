@@ -50,12 +50,7 @@ module.exports = {
         sails.log("LOGGED IN!!")
         this.req.session.userId = user.id;
 
-        sails.log.verbose(this.req.session.get);
-        sails.log.verbose(Object.getOwnPropertyNames(this.req.session));
-        // sails.log(this.req.me);
-
         throw { redirect: '/movies' }
-
       }
 
       else {
