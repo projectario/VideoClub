@@ -14,17 +14,18 @@ module.exports = {
     },
 
     redirect: {
-      responseType: '/movies'
+      responseType: 'redirect'
     }
  
   },
 
 
   fn: async function () {    
-    sails.log(this.req.session);
-
+    sails.log.verbose(this.req.session.userId)
+    if (this.req.session.userId)
+    return {redirect: '/movies'};
     // Respond with view.
-    return {};
+    // return {};
 
   }
 

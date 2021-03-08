@@ -23,8 +23,8 @@ module.exports = {
   
     fn: async function () {
   
-      if (this.req.me) {
-        throw {redirect: '/'};
+      if (this.req.session.userId) {
+        throw {redirect: '/movies'};
       }
   
       return {};
