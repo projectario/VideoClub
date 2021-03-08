@@ -18,21 +18,28 @@ module.exports = {
   },
 
 
-  exits: {},
+  exits: {
+    redirect: {
+      responseType: 'redirect'
+    },
+    problem: {
+      responseType: 'unauthorized'
+    }
+  },
 
 
   fn: async function ({ firstName, lastName, email, password, confirmPassword, isAdult }) {
     sails.log(firstName, lastName, email, password, confirmPassword, isAdult);
     this.email = email.toLowerCase(); // this propably works
     var isUser = await User.findOne({ email: email });
-    if (isUser) this.res.alreadyExists("<h2> Email already in use! </h2>");
+    if (isUser) throw {problem: '<h2> Email already in use! </h2>'}
     else {
       if (password == confirmPassword) {
         await User.create({ firstName, lastName, email, password: await bcrypt.hash(password, 12), isAdult })
-        this.res.redirect('/')
+        return {redirect: '/'};
       }
       else {
-        return this.res.passwordsDontMatch("<h1>Passwords not match!!!</h1>")
+        throw {problem: '<h1>Passwords not match!!!</h1>'}
       }
     }
   }
