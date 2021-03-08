@@ -1,5 +1,5 @@
 .header{
-    animation: moveInTop 0.8s ease;
+    // animation: moveInTop 0.8s ease;
     height: 70vh;
     background-image: linear-gradient(
         to right bottom,
@@ -29,43 +29,24 @@
     &__nav-button {
         text-align: center;
 
-    }
-
-    
+    }    
 }
 
-// .header__movies{
-//     background-size: cover;
-//     background-position: top;
-//     color: $color-white;
-//     font-size: 1.6rem;
-//     height: 55vh;
-//     align-items: center;
-//     transition: all 0.4s ease-in-out;
+.movie-container__header{
+    @extend .header;
+    background-image:linear-gradient(105deg,
+             rgba($color-grey-light-1, 0) 0%,
+             rgba($color-grey-light-1, .2) 20%,
+             rgba($color-grey-light-1, 1) 80%,
+             rgba($color-grey-light-1, 1) 90%,
+             rgba($color-grey-light-1, 1) 100%,
+              transparent 60%) ,
+              url(../images/titanic.jpg);
+    background-position: 0 100%;
+    height: 100vh;
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
 
-//     &-1{
-//         background-image: url(../images/movie.jpg);
-//     }
 
-//     &-2{
-//         background-image: url(../images/poster.jpg);
-//     }
 
-//     &-3{
-//     background-image: url(../images/movies.jpg);
-
-//     }
-
-//     &-prev, &-next{
-//         color: $color-white;
-//         font-size: 2rem;
-//         text-align: center;
-//         transition: all 0.4s ease;
-
-//         &:hover{
-//             font-size: 2.3rem;
-//             cursor: pointer;
-
-//         }
-//     }
-// }
+}
