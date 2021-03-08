@@ -18,7 +18,7 @@ module.exports = {
   // we can handle redirects and responses like this now
   exits: {
     success: {},
-    redirect :{
+    redirect: {
       responseType: 'redirect'
     },
     problem: {
@@ -34,7 +34,7 @@ module.exports = {
     let isUser = await User.findOne({ email: email.toLowerCase() });
 
     //Check to see if we have this user id the database
-    if (!isUser) throw {problem : '<h1>We dont know anyone that goes by that name! Try Again!</h1>'} // custom response about not matching email?
+    if (!isUser) throw { problem: '<h1>We dont know anyone that goes by that name! Try Again!</h1>' } // custom response about not matching email?
 
     // then find the user and match the provided password with the one in the database
     else if (isUser) {
@@ -42,25 +42,26 @@ module.exports = {
 
       let match = false
       match = await bcrypt.compare(password, user.password)
-      
+
       sails.log(user.password)
 
       if (match) {
-        
+
         sails.log("LOGGED IN!!")
         this.req.session.userId = user.id;
 
-        sails.log(this.req.session);
+        sails.log.verbose(this.req.session.get);
+        sails.log.verbose(Object.getOwnPropertyNames(this.req.session));
         // sails.log(this.req.me);
-        
-        throw {redirect: '/movies'}
+
+        throw { redirect: '/movies' }
 
       }
 
       else {
-        throw {problem: "<h1>Passwords not match!!!</h1>"}
+        throw { problem: "<h1>Passwords not match!!!</h1>" }
       }
-      
+
     }
 
   }
