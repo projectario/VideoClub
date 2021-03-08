@@ -76,7 +76,8 @@
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 3rem 2rem;
   grid-auto-rows: 25vh;
-  margin: 5vh 3vw;
+  margin: 5vh auto;
+  width: 90%;
 }
 
 .container__character {
@@ -91,4 +92,30 @@
     &-2 { grid-area: container__character-2; }
     &-3 { grid-area: container__character-3; }
     &-4 { grid-area: container__character-4; }
+}
+
+.movie-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1.1fr 0.9fr 1fr;
+  grid-template-rows: 0.3fr 0.3fr 1.4fr 1.2fr 1.1fr 1.7fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "movie-container__logo . . movie-container__chat movie-container__faq movie-container__logout"
+    ". . . . . ."
+    ". . . movie-container__title movie-container__title movie-container__title"
+    ". . . movie-container__desc movie-container__desc movie-container__genre"
+    ". . . . movie-container__price movie-container__btn"
+    ". . . . . .";
+
+    &__logo { grid-area: movie-container__logo; }
+    &__logout { grid-area: movie-container__logout; }
+    &__faq { grid-area: movie-container__faq; }
+    &__chat { grid-area: movie-container__chat; }
+    &__title { grid-area: movie-container__title; }
+    &__desc { grid-area: movie-container__desc; }
+    &__genre { grid-area: movie-container__genre; }
+    &__price { grid-area: movie-container__price; }
+    &__btn { grid-area: movie-container__btn; }
 }

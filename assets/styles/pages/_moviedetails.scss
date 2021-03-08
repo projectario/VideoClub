@@ -1,0 +1,39 @@
+.movie-container{
+    color: $color-primary;
+    letter-spacing: .3rem;
+    background-color: $color-grey-light-1;
+
+
+    &__logout, &__faq, &__chat{
+        width: 60%;
+        a{
+            color: $color-primary;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__title{
+        @extend .heading-primary--main;
+        margin-top: 0;
+    }
+
+    &__btn{
+        text-decoration: none;
+        color: $color-primary; 
+        border: 1px solid $color-primary;
+        box-shadow: $box-shadow-light-allaround;
+        padding: 1rem;
+        border-radius: 3px;
+        transition: all .4s ease-in-out;
+        animation: moveInBottom 0.8s ease;
+
+        &:hover{
+            transform: translateY(-.3rem);
+            box-shadow: $box-shadow-middle-allaround;
+            background-color: $color-primary-light;
+            color: $color-white;
+        }
+    }
+}
