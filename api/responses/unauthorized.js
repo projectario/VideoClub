@@ -10,7 +10,7 @@ module.exports = function unauthorized() {
   }
   // Or log them out (if necessary) and then redirect to the login page.
   else {
-
+    
     if (req.session.userId) {
       delete req.session.userId;
     }

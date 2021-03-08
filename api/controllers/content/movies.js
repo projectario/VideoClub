@@ -14,7 +14,7 @@ module.exports = {
 
   exits: {
     success: {
-      viewTemplatePath: 'pages/content/movies'
+      viewTemplatePath: 'content/movies'
     }
   },
 
