@@ -22,7 +22,7 @@ module.exports.routes = {
   'GET /': { action: 'view-homepage' },
   'GET /login': { view: 'pages/entrance/login' },
   'GET /movies': { action: 'content/movies' },
-  'GET /movies/kids': { view: 'content/kidsmovies' },
+  'GET /movies/kids': { view: 'pages/kidsmovies' },
   'GET /title': { view: 'pages/movieDetail' },
   'GET /signup': { action: 'entrance/view-signup' },
   'POST /signup': { action: 'entrance/signup' },

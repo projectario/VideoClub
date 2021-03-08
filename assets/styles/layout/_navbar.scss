@@ -1,10 +1,13 @@
 .navbar{
     // @include gradient(0.6);
-    background-color: $color-primary-light;
+    background-color: rgba($color-primary-light, .5);
     @include flex-row;
     align-items: center;
-    box-shadow: $box-shadow-intense-blr;
+    box-shadow: $box-shadow-intense-bl;
     transition: all 0.8s ease;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 
     &__logo, &__faq, &__login{ 
         // text-align: center;
