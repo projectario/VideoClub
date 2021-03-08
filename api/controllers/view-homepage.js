@@ -20,12 +20,13 @@ module.exports = {
   },
 
 
-  fn: async function () {    
-    sails.log.verbose(this.req.session.userId)
-    if (this.req.session.userId)
-    return {redirect: '/movies'};
-    // Respond with view.
-    // return {};
+  fn: async function () {
+  
+    if (this.req.session.userId) {
+      throw {redirect: '/movies'};
+    }
+
+    return {};
 
   }
 
