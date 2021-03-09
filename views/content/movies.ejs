@@ -1,73 +1,28 @@
 <div class="navbar">
-    <div class="navbar__logo"><a href="/">VideoClub</a></div>
-    <div class="navbar__faq"><a href="/">FAQ</a></div>
-    <div class="navbar__login"><a href="/logout">Logout</a></div>
+  <div class="navbar__logo"><a href="/">VideoClub</a></div>
+  <div class="navbar__faq"><a href="/">FAQ</a></div>
+  <div class="navbar__login"><a href="/logout">Logout</a></div>
 </div>
 
 <header class="movies-header"></header>
 <main class="container__movies">
-    <form action="" class="genre">
-        <select name="genre" class="genre__sellection">
-            <option value="#">Genre</option>
-            <option value="Adventure">Adventure</option>
-            <option value="Fantasy">Fantasy</option>
-            <option value="Mystery">Mystery</option>
-            <option value="Kids">Kids</option>
-        </select>
-        <input type="submit" class="btn  genre__submit" value="Get Movies" />
-    </form>
-    <h3 class="heading-secondary heading-secondary--movies">All Movies</h3>
-    <section class="movie__list">
-        <div class="movie__card">
-            <p class="movie__card-title">title</p>
-        </div>
-        <div class="movie__card">
-            <p class="movie__card-title">title</p>
-        </div>
-        <div class="movie__card">
-            <p class="movie__card-title">title</p>
-        </div>
-        <div class="movie__card">
-            <p class="movie__card-title">title</p>
-        </div>
-        <div class="movie__card">
-            <p class="movie__card-title">title</p>
-        </div>
-        <div class="movie__card">
-            <p class="movie__card-title">title</p>
-        </div>
-        <div class="movie__card">
-            <p class="movie__card-title">title</p>
-        </div>
-        <div class="movie__card">
-            <p class="movie__card-title">title</p>
-        </div>
-        <div class="movie__card">
-            <p class="movie__card-title">title</p>
-        </div>
-        <div class="movie__card">
-            <p class="movie__card-title">title</p>
-        </div>
-        <div class="movie__card">
-            <p class="movie__card-title">title</p>
-        </div>
-        <div class="movie__card">
-            <p class="movie__card-title">title</p>
-        </div>
-        <div class="movie__card">
-            <p class="movie__card-title">title</p>
-        </div>
-        <div class="movie__card">
-            <p class="movie__card-title">title</p>
-        </div>
-        <div class="movie__card">
-            <p class="movie__card-title">title</p>
-        </div>
-        <div class="movie__card">
-            <p class="movie__card-title">title</p>
-        </div>
-        <div class="movie__card">
-            <p class="movie__card-title">title</p>
-        </div>
-    </section>
+  <form action="" class="genre">
+    <select name="genre" class="genre__sellection">
+      <option value="#">Genre</option>
+      <option value="Adventure">Adventure</option>
+      <option value="Fantasy">Fantasy</option>
+      <option value="Mystery">Mystery</option>
+      <option value="Kids">Kids</option>
+    </select>
+    <input type="submit" class="btn genre__submit" value="Get Movies" />
+  </form>
+  <h3 class="heading-secondary heading-secondary--movies">All Movies</h3>
+  <section class="movie__list">
+    <% for(let i = 0; i < listOfMovies.length; i++) { %>
+    <div>
+      <img class="movie__card" src="<%= listOfMovies[i].posterUrl %>" />
+      <p class="movie__card-title"><%= listOfMovies[i].title %></p>
+    </div>
+    <% } %>
+  </section>
 </main>
