@@ -14,7 +14,7 @@ module.exports = {
     email: { type: 'string', required: true },
     password: { type: 'string', required: true },
     confirmPassword: { type: 'string', required: true },
-    isAdult: { type: 'boolean', },
+    isKid: { type: 'boolean', },
   },
 
 
@@ -28,18 +28,18 @@ module.exports = {
   },
 
 
-  fn: async function ({ firstName, lastName, email, password, confirmPassword, isAdult }) {
-    sails.log(firstName, lastName, email, password, confirmPassword, isAdult);
+  fn: async function ({ firstName, lastName, email, password, confirmPassword, isKid }) {
+    sails.log(firstName, lastName, email, password, confirmPassword, isKid);
     this.email = email.toLowerCase(); // this propably works
     var isUser = await User.findOne({ email: email });
-    if (isUser) throw {problem: '<h2> Email already in use! </h2>'}
+    if (isUser) throw { problem: '<h2> Email already in use! </h2>' }
     else {
       if (password == confirmPassword) {
-        await User.create({ firstName, lastName, email, password: await bcrypt.hash(password, 12), isAdult })
-        return {redirect: '/'};
+        await User.create({ firstName, lastName, email, password: await bcrypt.hash(password, 12), isKid })
+        return { redirect: '/' };
       }
       else {
-        throw {problem: '<h1>Passwords not match!!!</h1>'}
+        throw { problem: '<h1>Passwords not match!!!</h1>' }
       }
     }
   }
