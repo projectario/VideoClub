@@ -9,8 +9,8 @@ module.exports = {
 
   fn: async function () {
     let thisMovie = await Film.findOne({ id: 12 })
-    sails.log(thisMovie)
-    sails.log(thisMovie.storyline)
+    // sails.log(thisMovie)
+    // sails.log(thisMovie.storyline)
     // Respond with view.
 
     return {};

@@ -30,8 +30,8 @@ module.exports = {
 
     let user = await User.findOne({ id: sessionUserId })
     // sails.log(user)
-    if (user.isKid) throw {redirect: '/kidsmovies'}
-    
+    if (user.isKid) throw { redirect: '/kidsmovies' }
+
     let listOfMovies = await Film.find();
     // All done.
     return { listOfMovies };
