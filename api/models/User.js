@@ -12,7 +12,7 @@ module.exports = {
     lastName: { type: 'string' },
     email: { type: 'string' },
     password: { type: 'string' },
-    isAdult: { type: 'boolean' },
+    isKid: { type: 'boolean' },
     rents: {
       collection: 'Rent',
       via: 'userId'
