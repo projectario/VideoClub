@@ -12,6 +12,7 @@ module.exports = {
     genre: { type: 'string' },
     price: { type: 'number' },
     description: { type: 'string' },
+    storyline: { type: 'string' },
     releasedDate: { type: 'string' }, // type??
     rating: { type: 'number' },
     posterUrl: { type: 'string' },
