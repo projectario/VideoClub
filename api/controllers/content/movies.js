@@ -4,7 +4,7 @@ module.exports = {
   friendlyName: 'Movies',
 
 
-  description: 'Movies something.',
+  description: 'Show all movies and let the user choose one.',
 
 
   inputs: {
@@ -22,11 +22,12 @@ module.exports = {
   },
 
 
-  fn: async function (inputs) {
-    if (this.req.session.userId == undefined) throw { redirect: '/login'}
+  fn: async function () {
+    if (this.req.session.userId == undefined) throw { redirect: '/login' }
 
+    let listOfMovies = await Film.find();
     // All done.
-    return;
+    return { listOfMovies };
 
   }
 
