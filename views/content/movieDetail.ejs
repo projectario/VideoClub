@@ -8,17 +8,14 @@
     <div class="movie-container__logout navbar__login"><a href="/logout">Logout</a></div>
     <div class="movie-container__faq navbar__faq"><a href="/">FAQ</a></div>
     <div class="movie-container__chat navbar__faq"><a href="/">Chat</a></div> -->
-  <div class="movie-container__title">TITANIC</div>
-  <p class="movie-container__desc">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque maxime
-    quasi autem amet placeat. Totam expedita voluptatum animi ratione
-    blanditiis.
+  <div class="movie-container__title"> <%= film.title.toUpperCase() %>  </div>
+  <p class="movie-container__desc"> <%= film.storyline %> 
   </p>
   <div class="movie-container__genre">
-    <p>genre</p>
-    <p>rating</p>
-    <p>release date</p>
+    <p><strong>Genre:</strong> <%= film.genre %> </p>
+    <p><strong> Rating:</strong> <%= film.rating %>  </p>
+    <p><strong> Release Date:</strong> <%= film.releasedDate %>  </p>
   </div>
-  <div class="movie-container__price">3 euro</div>
+  <div class="movie-container__price"><strong> <%= film.price %>€</strong> </div>
   <a href="/" class="movie-container__btn">Watch Now</a>
 </div>
