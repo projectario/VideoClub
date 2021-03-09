@@ -23,9 +23,14 @@ module.exports = {
 
 
   fn: async function () {
-    if (this.req.session.userId == undefined) throw { redirect: '/login' }
 
-    let listOfMovies = await Film.find();
+    let sessionUserId = this.req.session.userId;
+
+    if (sessionUserId == undefined) throw { redirect: '/login' }
+
+    let user = User.findOne({ id: sessionUserId })
+    if (user.isKid) throw {redirect: '/movies/kids'}
+      let listOfMovies = await Film.find();
     // All done.
     return { listOfMovies };
 
