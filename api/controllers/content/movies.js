@@ -30,7 +30,8 @@ module.exports = {
 
     let user = User.findOne({ id: sessionUserId })
     if (user.isKid) throw {redirect: '/movies/kids'}
-      let listOfMovies = await Film.find();
+    
+    let listOfMovies = await Film.find();
     // All done.
     return { listOfMovies };
 
