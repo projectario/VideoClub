@@ -16,6 +16,7 @@ module.exports = {
     releasedDate: { type: 'string' }, // type??
     rating: { type: 'number' },
     posterUrl: { type: 'string' },
+    properForKids: { type: 'boolean' },
 
     rents: {
       collection: 'Rent',
