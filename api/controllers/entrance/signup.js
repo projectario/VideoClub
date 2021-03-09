@@ -9,12 +9,12 @@ module.exports = {
 
 
   inputs: {
-    firstName: { type: 'string', required: true },
-    lastName: { type: 'string', required: true },
-    email: { type: 'string', required: true },
-    password: { type: 'string', required: true },
+    firstName: { type: 'string' },
+    lastName: { type: 'string' },
+    email: { type: 'string' },
+    password: { type: 'string' },
     confirmPassword: { type: 'string', required: true },
-    isAdult: { type: 'boolean', },
+    isKid: { type: 'boolean' },
   },
 
 
@@ -28,15 +28,16 @@ module.exports = {
   },
 
 
-  fn: async function ({ firstName, lastName, email, password, confirmPassword, isAdult }) {
-    sails.log(firstName, lastName, email, password, confirmPassword, isAdult);
+  fn: async function ({ firstName, lastName, email, password, confirmPassword, isKid }) {
+    sails.log(firstName, lastName, email, password, confirmPassword, isKid);
     this.email = email.toLowerCase(); // this propably works
     var isUser = await User.findOne({ email: email });
     if (isUser) throw {problem: '<h2> Email already in use! </h2>'}
     else {
       if (password == confirmPassword) {
-        await User.create({ firstName, lastName, email, password: await bcrypt.hash(password, 12), isAdult })
-        return {redirect: '/'};
+        let newUser = await User.create({ firstName, lastName, email, password: await bcrypt.hash(password, 12), isKid })
+        if (isKid) throw {redirect: '/login'} // makes no difference in the code as it is, but is needed if we login the user right after signup
+        return {redirect: '/login'};
       }
       else {
         throw {problem: '<h1>Passwords not match!!!</h1>'}
