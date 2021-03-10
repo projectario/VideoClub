@@ -19,13 +19,13 @@
   <h3 class="heading-secondary heading-secondary--movies">All Movies</h3>
   <section class="movie__list">
     <% for(let i=0; i < listOfMovies.length; i++) { %>
-    <a href="title/<%= listOfMovies[i].id %> ">
-      <div class="movie__card" style="background-image:url('<%= listOfMovies[i].posterUrl %>');">
-        <p class="movie__card-title">
-          <%= listOfMovies[i].title %>
-        </p>
-      </div>
-    </a>
-    <% } %>
+      <a href="title/<%= listOfMovies[i].id %> ">
+        <div class="movie__card" style="background-image:url('<%= listOfMovies[i].posterUrl %>');">
+          <p class="movie__card-title">
+            <%= listOfMovies[i].description %>
+          </p>
+        </div>
+      </a>
+      <% } %>
   </section>
 </main>

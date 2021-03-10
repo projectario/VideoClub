@@ -1,6 +1,6 @@
 .movie-container{
     color: $color-primary;
-    letter-spacing: .3rem;
+    letter-spacing: .2rem;
     background-color: $color-grey-light-1;
     margin-top: -7vh;
 
@@ -14,9 +14,19 @@
         }
     }
 
+    &__desc{
+        margin-top: 1rem;
+    }
+
     &__title{
         @extend .heading-primary--main;
         margin-top: 0;
+        font-size: 6rem;
+
+        &-xs{
+        font-size: 3rem;
+        letter-spacing: 2rem;
+        }
     }
 
     &__btn{
@@ -27,7 +37,7 @@
         padding: 1rem;
         border-radius: 3px;
         transition: all .4s ease-in-out;
-        animation: moveInBottom 0.8s ease;
+        // animation: moveInBottom 0.8s ease;
 
         &:hover{
             transform: translateY(-.3rem);

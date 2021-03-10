@@ -14,19 +14,20 @@
 
     &-title {
       visibility: hidden;
-      color: $color-white;
+      color: $color-primary;
       letter-spacing: 0.2rem;
-      font-size: 1rem;
+      font-size: 1.2rem;
       font-weight: 600;
       padding: .5rem;
-      background-color: rgba($color-black, 0.6);
-      height: 6vh;
-      margin-top: 24vh;
-      // transition: all .4s ease;
+      background-color: rgba($color-grey-light-1, .6);
+      height: inherit;
+      margin: auto;
       width: 100%;
       text-align: center;
       border-bottom-left-radius: 3px;
       border-bottom-right-radius: 3px;
+
+      
     }
 
     &:hover {
