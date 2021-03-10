@@ -7,12 +7,7 @@
 <header class="movies-header"></header>
 <main class="container__movies">
   <form action="" class="genre">
-    <select
-      name="genre"
-      class="genre__selection"
-      id="genre"
-      onchange="this.form.submit()"
-    >
+    <select name="genre" class="genre__selection" id="genre" onchange="this.form.submit()">
       <option value="">Genre</option>
       <option value="All">All Movies</option>
       <option value="Action">Action</option>
@@ -26,18 +21,18 @@
     <!-- <input type="submit" class="btn genre__submit" value="Get Movies" /> -->
   </form>
   <h3 class="heading-secondary heading-secondary--movies">
-    <% if(!genre) {%> All <% } %> <%= genre %> Movies
+    <% if(!genre) {%> All <% } %>
+        <%= genre %> Movies
   </h3>
   <section class="movie__list">
     <% for(let i=0; i < listOfMovies.length; i++) { %>
-    <a href="title/<%= listOfMovies[i].id %> ">
-      <div
-        class="movie__card"
-        style="background-image: url('<%= listOfMovies[i].posterUrl %>')"
-      >
-        <p class="movie__card-title"><%= listOfMovies[i].description %></p>
-      </div>
-    </a>
-    <% } %>
+      <a href="title/<%= listOfMovies[i].id %> ">
+        <div class="movie__card" style="background-image: url('<%= listOfMovies[i].posterUrl %>')">
+          <p class="movie__card-title">
+            <%= listOfMovies[i].description %>
+          </p>
+        </div>
+      </a>
+      <% } %>
   </section>
 </main>

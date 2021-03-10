@@ -42,13 +42,28 @@
 <header class="movies-header__kids"></header>
 <main class="container__movies">
   <section class="movie__list">
+    <form action="" class="genre">
+      <select name="genre" class="genre__selection" id="genre" onchange="this.form.submit()">
+        <option value="">Genre</option>
+        <option value="All">All Movies</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="Mystery">Mystery</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Romance">Romance</option>
+        <option value="Animation">Animation</option>
+      </select>
+      <!-- <input type="submit" class="btn genre__submit" value="Get Movies" /> -->
+    </form>
+    <h3 class="heading-secondary heading-secondary--movies">
+      <% if(!genre) {%> All <% } %>
+          <%= genre %> Movies
+    </h3>
     <% for(let i=0; i < listOfKidsMovies.length; i++) { %>
-    <div
-      class="movie__card"
-      style="background-image: url('<%= listOfKidsMovies[i].posterUrl %>')"
-    >
-      <p class="movie__card-title"><%= listOfKidsMovies[i].title %></p>
-    </div>
-    <% } %>
+      <div class="movie__card" style="background-image: url('<%= listOfKidsMovies[i].posterUrl %>')">
+        <p class="movie__card-title">
+          <%= listOfKidsMovies[i].title %>
+        </p>
+      </div>
+      <% } %>
   </section>
 </main>
