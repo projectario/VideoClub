@@ -23,7 +23,7 @@ module.exports = {
       responseType: 'redirect'
     },
     problem: {
-      responseType: 'unauthorized'
+      responseType: 'badCombo'
     }
   },
 
@@ -34,10 +34,11 @@ module.exports = {
     var isUser = await User.findOne({ email: email });
     if (isUser) throw { problem: '<h2> Email already in use! </h2>' }
     else {
-      if (password == confirmPassword) {
+      if (password === confirmPassword) {
         let newUser = await User.create({ firstName, lastName, email, password: await bcrypt.hash(password, 12), isKid })
         // if (isKid) throw {redirect: '/login'} // makes no difference in the code as it is, but is needed if we login the user right after signup
-        throw {redirect: '/login'};
+        throw { redirect: '/login' };
+        throw { redirect: '/login' };
       }
       else {
         throw { problem: '<h1>Passwords not match!!!</h1>' }
