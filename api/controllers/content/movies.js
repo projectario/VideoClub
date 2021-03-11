@@ -8,6 +8,9 @@ module.exports = {
 
 
   inputs: {
+    genre: {
+      type: 'string',
+    }
 
   },
 
@@ -22,7 +25,7 @@ module.exports = {
   },
 
 
-  fn: async function () {
+  fn: async function ({ genre }) {
 
     let sessionUserId = this.req.session.userId;
 
@@ -32,9 +35,17 @@ module.exports = {
     // sails.log(user)
     if (user.isKid) throw { redirect: '/kidsmovies' }
 
-    let listOfMovies = await Film.find();
+    // let listOfMovies = await Film.find();
+    let listOfMovies;
+    if (genre == 'All') {
+      listOfMovies = await Film.find();
+
+    } else {
+      listOfMovies = await Film.find({ genre: genre })
+
+    }
     // All done.
-    return { listOfMovies };
+    return { listOfMovies, genre };
 
   }
 
