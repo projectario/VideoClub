@@ -31,17 +31,17 @@ module.exports = {
 
     if (sessionUserId == undefined) throw { redirect: '/login' }
 
-    let user = await User.findOne({ id: sessionUserId })
+    let user = await User.findOne({ id: sessionUserId }).meta({ skipRecordVerification: true })
     // sails.log(user)
     if (user.isKid) throw { redirect: '/kidsmovies' }
 
     // let listOfMovies = await Film.find();
     let listOfMovies;
     if (genre == 'All') {
-      listOfMovies = await Film.find();
+      listOfMovies = await Film.find().meta({ skipRecordVerification: true });
 
     } else {
-      listOfMovies = await Film.find({ genre: genre })
+      listOfMovies = await Film.find({ genre: genre }).meta({ skipRecordVerification: true });
 
     }
     // All done.
