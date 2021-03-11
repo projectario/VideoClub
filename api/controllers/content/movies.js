@@ -31,7 +31,7 @@ module.exports = {
 
     if (sessionUserId == undefined) throw { redirect: '/login' }
 
-    let user = await User.findOne({ id: sessionUserId }).meta({ skipRecordVerification: true })
+    let user = await User.findOne({ id: sessionUserId });
     // sails.log(user)
     if (user.isKid) throw { redirect: '/kidsmovies' }
 
