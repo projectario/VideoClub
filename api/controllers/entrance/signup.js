@@ -38,7 +38,6 @@ module.exports = {
         let newUser = await User.create({ firstName, lastName, email, password: await bcrypt.hash(password, 12), isKid })
         // if (isKid) throw {redirect: '/login'} // makes no difference in the code as it is, but is needed if we login the user right after signup
         throw { redirect: '/login' };
-        throw { redirect: '/login' };
       }
       else {
         throw { problem: '<h1>Passwords not match!!!</h1>' }
