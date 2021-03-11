@@ -22,7 +22,7 @@ module.exports = {
       responseType: 'redirect'
     },
     problem: {
-      responseType: 'unauthorized'
+      responseType: 'badCombo'
     },
   },
 
