@@ -37,10 +37,10 @@ module.exports = {
 
     let listOfKidsMovies;
     if (genre == 'All') {
-      listOfKidsMovies = await Film.find({ properForKids: 1 });
+      listOfKidsMovies = await Film.find({ properForKids: 1 }).meta({ skipRecordVerification: true });
 
     } else {
-      listOfKidsMovies = await Film.find({ genre: genre, properForKids: 1 })
+      listOfKidsMovies = await Film.find({ genre: genre, properForKids: 1 }).meta({ skipRecordVerification: true });
 
     }
     // All done.
