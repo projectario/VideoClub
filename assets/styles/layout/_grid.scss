@@ -65,22 +65,10 @@
   grid-gap: 3rem 2rem;
   grid-auto-rows: 30vh;
   margin: 5vh auto;
-  width: 90%;
+  
 }
 
-.container__character {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "container__character-1 container__character-2 container__character-3 container__character-4";
 
-    &-1 { grid-area: container__character-1; }
-    &-2 { grid-area: container__character-2; }
-    &-3 { grid-area: container__character-3; }
-    &-4 { grid-area: container__character-4; }
-}
 
 .movie-container {
   display: grid;
