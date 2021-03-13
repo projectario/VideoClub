@@ -8,8 +8,6 @@ const confirmPassword = document.getElementById('confirmPassword');
 const error = document.querySelector('.error');
 
 
-const carouselClasses = ['header__movies-1', 'header__movies-2', 'header__movies-3', 'header__movies-4'];
-
 function checkAge() {
     if (ageChecker.checked) {
         signupImage.classList.remove('form__image-adult');

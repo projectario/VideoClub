@@ -33,7 +33,7 @@ module.exports = function badCombo(optionalData) {
   var res = this.res;
 
   // Define the status code to send in the response.
-  var statusCodeToSet = 400;
+  var statusCodeToSet = 409;
 
   // If no data was provided, use res.sendStatus().
   if (optionalData === undefined) {

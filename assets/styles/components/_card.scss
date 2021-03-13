@@ -14,12 +14,12 @@
 
     &-text {
       visibility: hidden;
-      color: $color-primary;
+      color: $color-white;
       letter-spacing: 0.2rem;
       font-size: 1.2rem;
       font-weight: 600;
       // padding: 0 .5rem;
-      background-color: rgba($color-grey-light-1, .6);
+      background-color: rgba($color-black, .6);
       height: inherit;
       margin: auto;
       width: 100%;
@@ -30,7 +30,7 @@
       &--title{
         margin-top: 5vh;
         height: 5vh;
-        background-color: rgba($color-black, .6);
+        // background-color: rgba($color-black, .6);
         color: $color-white;
         text-align: center;
         width: 100%;
@@ -49,7 +49,7 @@
 
     &:hover &-text {
       visibility: visible;
-      animation: moveInBottom 0.6s ease;
+      animation: fadeIn 0.8s ease;
     }
   }
 }
