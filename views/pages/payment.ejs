@@ -1,0 +1,24 @@
+<nav class="navbar">
+    <div class="navbar__logo"><a href="/">VideoClub</a></div>
+    <div class="navbar__faq"><a href="/">FAQ</a></div>
+    <div class="navbar__login"><a href="/logout">Logout</a></div>
+</nav>
+<main class="signup-page">
+    <section class="form__container-payment">
+        <form action="http://localhost:1337/play" method="POST" class="form__container-payment--form">
+            <h4 class="heading-secondary ">Payment</h4>
+            <p class="heading-tertiary">Movie Title - Price</p>
+            <input id="cardNumber" name="cardNumber" class="input-sm" type="text" placeholder="Card Number"
+                pattern="[0-9]{13,16}" required title="Enter a valid card number between 13 and 16 numbers">
+            <input id="cardHolder" name="cardHolder" class="input-sm" type="text" placeholder="Card holders full name"
+                pattern="[A-Za-z]{5-30}" required title="Enter your Full Name">
+            <input id="secpin" name="secpin" class="input-sm" type="password" placeholder="Security PIN"
+                pattern="[0-9]{3}" title="Enter the security pin of your card" required>
+            <input type="text" pattern="(?:0[1-9]|1[0-2])/[0-9]{2}" class="input-sm"
+                title="Enter a date in this format MM/YY" placeholder="Expiration Date MM/YY" required />
+            <p class="heading-secondary error"></p>
+            <a href="" class="btn btn-text">Proceed with PayPal</a>
+            <button class="btn btn-form">Pay</button>
+        </form>
+    </section>
+</main>
