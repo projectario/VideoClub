@@ -31,7 +31,9 @@ module.exports = {
     let film = await Film.findOne({ id: this.req.params.id }).meta({ skipRecordVerification: true });
 
     // check if the user and the movie have age restrictions
+
     if (user.isKid == true && film.properForKids == false) throw {redirect: '/kidsmovies'};
+
     // All done.
     return { film };
 
