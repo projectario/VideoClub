@@ -26,7 +26,11 @@ module.exports.routes = {
   // movies
   'GET /movies': { action: 'content/movies' },
   'GET /kidsmovies': { action: 'content/kidsmovies' },
-  'GET /title/:id': {  action: 'content/movie-detail' },
+  'GET /title/:id': { action: 'content/movie-detail' },
+  'GET /payment': { view: 'pages/payment' },
+  'GET /play': { view: 'pages/play' },
+
+
   // 'GET /movie': { action: 'content/movieDetail' },
   // signup
   'GET /signup': { action: 'entrance/view-signup' },
