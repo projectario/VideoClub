@@ -12,8 +12,8 @@
                 pattern="[0-9]{13,16}" required title="Enter a valid card number between 13 and 16 numbers">
             <input id="cardHolder" name="cardHolder" class="input-sm" type="text" placeholder="Card holders full name"
                 pattern="[A-Za-z]{5-30}" required title="Enter your Full Name">
-            <input id="secpin" name="secpin" class="input-sm" type="password" placeholder="Security PIN"
-                pattern="[0-9]{3}" title="Enter the security pin of your card" required>
+            <input id="secpin" name="secpin" class="input-sm" type="password" placeholder="CVV" pattern="[0-9]{3}"
+                title="Enter the CVV of your card" required>
             <input type="text" pattern="(?:0[1-9]|1[0-2])/[0-9]{2}" class="input-sm"
                 title="Enter a date in this format MM/YY" placeholder="Expiration Date MM/YY" required />
             <p class="heading-secondary error"></p>
