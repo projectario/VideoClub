@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 15px;
+    border-radius: 5px;
     box-shadow: $box-shadow-card;
     transition: all 0.4s ease-in-out;
 
@@ -19,6 +19,7 @@
       font-size: 1.2rem;
       font-weight: 600;
       // padding: 0 .5rem;
+      border-radius: 5px;
       background-color: rgba($color-black, .6);
       height: inherit;
       margin: auto;
