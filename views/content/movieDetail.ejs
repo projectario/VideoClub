@@ -37,7 +37,7 @@ rgba(247, 247, 247, 1) 100%,
         <div class="movie-container__price"><strong>
             <%= film.price %>€
           </strong> </div>
-        <a href="/payment" class="movie-container__btn">Watch Now</a>
+        <a href="/payment/<%= film.id %> " class="movie-container__btn">Watch Now</a>
 
         <div>
           <iframe width=" 720" height="415" src=<%=film.url%> frameborder="0"
