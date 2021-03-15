@@ -16,11 +16,13 @@
 
     &__desc{
         margin-top: 1rem;
+        padding-bottom: 4rem;
     }
 
     &__title{
         @extend .heading-primary--main;
         margin-top: 0;
+        padding-top: 2rem;
         font-size: 6rem;
 
         &-xs{
