@@ -28,6 +28,8 @@ module.exports.routes = {
   'GET /kidsmovies': { action: 'content/kidsmovies' },
   'GET /title/:id': { action: 'content/movie-detail' },
 
+  // TODO
+  // POST /payment
   'GET /payment': { action: 'account/view-payment' },
   'GET /play': { action: 'account/view-movie' },
   'GET /faq': { view: 'pages/faq' },
