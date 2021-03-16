@@ -31,6 +31,8 @@ module.exports.routes = {
   'GET /payment': { action: 'account/view-payment' },
   'GET /play': { action: 'account/view-movie' },
   'GET /faq': { view: 'pages/faq' },
+  'GET /chat': { view: 'pages/chat' },
+
 
 
 
