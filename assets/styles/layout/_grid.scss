@@ -47,15 +47,17 @@
 
 .navbar{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 7vh;
   gap: 0px 0px;
   grid-template-areas:
-  "navbar__logo . . . navbar__faq navbar__login";
+    "navbar__logo . . . . . . navbar__chat navbar__faq navbar__user navbar__login";
 
   &__logo { grid-area: navbar__logo; }
   &__faq { grid-area: navbar__faq; }
   &__login { grid-area: navbar__login; }
+  &__chat { grid-area: navbar__chat; }
+  &__user { grid-area: navbar__user; }
 
 }
 
@@ -96,4 +98,19 @@
     &__btn { grid-area: movie-container__btn; }
 }
 
+.chat-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.3fr 1.7fr 1.4fr 0.6fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "chat-container__heading chat-container__heading chat-container__heading chat-container__heading"
+    "chat-container__messages chat-container__messages chat-container__messages chat-container__users"
+    "chat-container__messages chat-container__messages chat-container__messages chat-container__users"
+    "chat-container__input chat-container__input chat-container__input chat-container__users";
 
+    &__heading { grid-area: chat-container__heading; }
+    &__users { grid-area: chat-container__users; }
+    &__input { grid-area: chat-container__input; }
+    &__messages { grid-area: chat-container__messages; }
+}
