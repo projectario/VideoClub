@@ -3,11 +3,22 @@
         background-color: $color-white;
         width: 30%;
         margin: 10vh auto ;
-        display: flex; 
-        flex-direction: column;
+        @include flex-column;
         justify-content: center;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         transition: all 0.8s ease-in-out;
+
+        @include respond(tab-land){
+            width: 40%;
+        }
+    
+        @include respond(tab-port){
+            width: 50%;
+        }
+    
+        @include respond(phone){
+            width: 60%;
+        }
 
         &-form{
             @include flex-column;    
@@ -23,10 +34,30 @@
         background-image: url(../images/comp-1-rem.png);
         background-repeat: no-repeat;
         background-size: 90%;
-        background-position: top center;
-        margin-top: -13rem;
+        background-position: center;
+        margin-top: -10rem;
         transition: all 0.8s ease-in-out;
         z-index: 20;
+
+        @include respond(tab-land){
+            background-size: 80%;
+            margin-top: -10rem;
+            height: 25vh;
+
+            
+        }
+    
+        @include respond(tab-port){
+            margin-top: -12rem;
+            height: 20vh;
+            
+        }
+    
+        @include respond(phone){
+            background-size: 90%;
+            height: 20vh;
+            
+        }
     
     } 
 
@@ -63,6 +94,18 @@
             @include flex-column;
             justify-content: center;
             
+        }
+        
+        @include respond(tab-land){
+            width: 50%;
+        }
+    
+        @include respond(tab-port){
+            width: 60%;
+        }
+    
+        @include respond(phone){
+            width: 80%;
         }
     
     }

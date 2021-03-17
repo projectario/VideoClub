@@ -12,15 +12,19 @@
     box-shadow: $box-shadow-card;
     transition: all 0.4s ease-in-out;
 
+
     &-text {
       visibility: hidden;
-      color: $color-white;
+      color: $color-primary;
       letter-spacing: 0.2rem;
       font-size: 1.2rem;
-      font-weight: 600;
+      // font-weight: 600;
       // padding: 0 .5rem;
       border-radius: 5px;
-      background-color: rgba($color-black, .6);
+      // @include gradient(.7);
+      font-weight: 600;
+
+      background-color: rgba($color-grey-light-1, .6);
       height: inherit;
       margin: auto;
       width: 100%;
@@ -31,11 +35,13 @@
       &--title{
         margin-top: 5vh;
         height: 5vh;
+        // @include gradient(.6);
+        font-style: italic;
         // background-color: rgba($color-black, .6);
-        color: $color-white;
+        color: $color-primary;
         text-align: center;
         width: 100%;
-        font-weight: 400;
+        font-weight: 600;
       }
 
       &--desc{
@@ -51,6 +57,10 @@
     &:hover &-text {
       visibility: visible;
       animation: fadeIn 0.8s ease;
+    }
+    &:hover &-title {
+      display: none;
+      // animation: fadeIn 0.8s ease;
     }
   }
 }
