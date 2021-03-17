@@ -31,6 +31,32 @@
     ". section-overview__photo-3 . section-overview__text-3 section-overview__text-3 section-overview__text-3 ."
     ". . section-overview__text-4 section-overview__text-4 section-overview__text-4 section-overview__photo-4 ."
     ". section-overview__photo-5 . section-overview__text-5 section-overview__text-5 section-overview__text-5 .";
+
+    @include respond(tab-land){
+      grid-template-areas:
+    ". section-overview__photo-1 section-overview__photo-1 . section-overview__text-1 section-overview__text-1 section-overview__text-1 "
+    ". section-overview__text-2 section-overview__text-2 . section-overview__photo-2 section-overview__photo-2 ."
+    ". section-overview__photo-3 section-overview__photo-3 . section-overview__text-3 section-overview__text-3 section-overview__text-3 "
+    ". section-overview__text-4 section-overview__text-4 . section-overview__photo-4 section-overview__photo-4 ."
+    ". section-overview__photo-5 section-overview__photo-5 . section-overview__text-5 section-overview__text-5 section-overview__text-5 ";
+  }
+
+  // @include respond(tab-port){
+  //     font-size: 50%;
+  // }
+
+  @include respond(tab-port){
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "section-overview__photo-1 section-overview__text-1"
+    "section-overview__text-2 section-overview__photo-2"
+    "section-overview__photo-3 section-overview__text-3"
+    "section-overview__text-4 section-overview__photo-4"
+    "section-overview__photo-5 section-overview__text-5";
+  }
+
+  
     
 
     &__photo-1 { grid-area: section-overview__photo-1; }
@@ -63,10 +89,17 @@
 
 .movie__list{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
   grid-gap: 3rem 2rem;
   grid-auto-rows: 30vh;
   margin: 5vh auto;
+
+  @include respond(phone){
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    margin: 0;
+
+        
+    }
   
 }
 
@@ -86,6 +119,10 @@
     ". . . movie-container__desc movie-container__desc movie-container__genre"
     ". . . . movie-container__price movie-container__btn"
     ". . . . . .";
+
+    @include respond(phone){
+      @include flex-column;
+  }
 
     &__logo { grid-area: movie-container__logo; }
     &__logout { grid-area: movie-container__logout; }
@@ -113,4 +150,6 @@
     &__users { grid-area: chat-container__users; }
     &__input { grid-area: chat-container__input; }
     &__messages { grid-area: chat-container__messages; }
+
+
 }

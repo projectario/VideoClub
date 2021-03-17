@@ -4,28 +4,77 @@
     background-color: $color-grey-light-1;
     margin-top: -7vh;
 
-    &__logout, &__faq, &__chat{
-        width: 60%;
-        a{
-            color: $color-primary;
-            &:hover{
-                text-decoration: underline;
-            }
-        }
+    @include respond(tab-land){
+        font-size: 1.4rem;
+        letter-spacing: 0.1rem;
+    }
+
+    @include respond(phone){
+       font-weight: 500;
     }
 
     &__desc{
-        margin-top: 1rem;
+        @include respond(phone){
+            padding-top: 5vh;
+            padding-left: 5vh;
+            padding-right: 5vh;
+            background-color: rgba($color-grey-light-1, .7);  
+        }
+
     }
+
+    &__genre, &__price{
+       
+        @include respond(phone){
+            padding-left: 5vh;
+            background-color: rgba($color-grey-light-1, .7);  
+            width: 100%;  
+            }
+    }
+
+    &__btn{
+        @include respond(phone){
+            background-color: rgba($color-grey-light-1, .7);  
+            margin-top: -7vh; 
+           margin-left: 10vh;
+        }
+    }
+
+
 
     &__title{
         @extend .heading-primary--main;
         margin-top: 0;
         font-size: 6rem;
 
+        @include respond(tab-land){
+            font-size: 4rem;
+            // letter-spacing: 0.1rem;
+        }
+
+        @include respond(phone){
+            padding-top: 5vh;
+            padding-left: 5vh;
+            background-image:linear-gradient(to top,
+        rgba($color-grey-light-1, 0.7)0%,
+        rgba($color-grey-light-1, 0.3)20%,
+        rgba($color-grey-light-1, 0.7)60%,
+        rgba($color-grey-light-1, 0.5)80%,
+        rgba($color-grey-light-1, 0.4)85%,
+        rgba($color-grey-light-1, 0.3)90%,
+        rgba($color-grey-light-1, .2)100%,
+              transparent 60%);
+        animation: none;
+        }
+
         &-xs{
         font-size: 3rem;
         letter-spacing: 2rem;
+
+        @include respond(tab-land){
+            font-size: 2.5rem;
+
+        }
         }
     }
 
