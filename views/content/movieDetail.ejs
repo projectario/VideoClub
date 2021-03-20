@@ -44,8 +44,21 @@ rgba(247, 247, 247, 1) 100%,
             <%= film.releasedDate %>
           </p>
         </div>
+        <div class="movie-container__trailer">
+          <iframe width=" 550" height="300" src=<%=film.url%> frameborder="0"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
         <div class="movie-container__price"><strong>
             <%= film.price %>€
           </strong> </div>
-        <a href="/payment" class="movie-container__btn">Watch Now</a>
+        <a href="/payment/<%= film.id %> " class="movie-container__btn">Watch Now</a>
+
+        <div>
+          <!-- <iframe width=" 720" height="415" src=<%=film.url%> frameborder="0"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe> -->
+
+        </div>
+
 </div>

@@ -117,7 +117,7 @@
     ". . . . . ."
     ". . . movie-container__title movie-container__title movie-container__title"
     ". . . movie-container__desc movie-container__desc movie-container__genre"
-    ". . . . movie-container__price movie-container__btn"
+    ". . . movie-container__trailer movie-container__price movie-container__btn"
     ". . . . . .";
 
     @include respond(phone){
@@ -132,6 +132,7 @@
     &__desc { grid-area: movie-container__desc; }
     &__genre { grid-area: movie-container__genre; }
     &__price { grid-area: movie-container__price; }
+    &__trailer { grid-area: movie-container__trailer; }
     &__btn { grid-area: movie-container__btn; }
 }
 

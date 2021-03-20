@@ -17,6 +17,7 @@ module.exports = {
     rating: { type: 'number' },
     posterUrl: { type: 'string' },
     properForKids: { type: 'boolean' },
+    url: { type: 'string' },
 
     rents: {
       collection: 'Rent',

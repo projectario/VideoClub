@@ -1,98 +1,97 @@
-.movie-container{
+.movie-container {
+  color: $color-primary;
+  letter-spacing: 0.2rem;
+  background-color: $color-grey-light-1;
+  margin-top: -7vh;
+
+  @include respond(tab-land) {
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+  }
+
+  @include respond(phone) {
+    font-weight: 500;
+  }
+
+  &__desc {
+    @include respond(phone) {
+      padding-top: 5vh;
+      padding-left: 5vh;
+      padding-right: 5vh;
+      background-color: rgba($color-grey-light-1, 0.7);
+    }
+  }
+
+  &__genre,
+  &__price {
+    @include respond(phone) {
+      padding-left: 5vh;
+      background-color: rgba($color-grey-light-1, 0.7);
+      width: 100%;
+    }
+  }
+
+  &__btn {
+    @include respond(phone) {
+      background-color: rgba($color-grey-light-1, 0.7);
+      margin-top: -7vh;
+      margin-left: 10vh;
+    }
+  }
+
+  &__title {
+    @extend .heading-primary--main;
+    margin-top: 0;
+    padding-top: 2rem;
+    font-size: 6rem;
+
+    @include respond(tab-land) {
+      font-size: 4rem;
+      // letter-spacing: 0.1rem;
+    }
+
+    @include respond(phone) {
+      padding-top: 5vh;
+      padding-left: 5vh;
+      background-image: linear-gradient(
+        to top,
+        rgba($color-grey-light-1, 0.7) 0%,
+        rgba($color-grey-light-1, 0.3) 20%,
+        rgba($color-grey-light-1, 0.7) 60%,
+        rgba($color-grey-light-1, 0.5) 80%,
+        rgba($color-grey-light-1, 0.4) 85%,
+        rgba($color-grey-light-1, 0.3) 90%,
+        rgba($color-grey-light-1, 0.2) 100%,
+        transparent 60%
+      );
+      animation: none;
+    }
+
+    &-xs {
+      font-size: 3rem;
+      letter-spacing: 2rem;
+
+      @include respond(tab-land) {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  &__btn {
+    text-decoration: none;
     color: $color-primary;
-    letter-spacing: .2rem;
-    background-color: $color-grey-light-1;
-    margin-top: -7vh;
+    border: 1px solid $color-primary;
+    box-shadow: $box-shadow-light-allaround;
+    padding: 1rem;
+    border-radius: 3px;
+    transition: all 0.4s ease-in-out;
+    // animation: moveInBottom 0.8s ease;
 
-    @include respond(tab-land){
-        font-size: 1.4rem;
-        letter-spacing: 0.1rem;
+    &:hover {
+      transform: translateY(-0.3rem);
+      box-shadow: $box-shadow-middle-allaround;
+      background-color: $color-primary-light;
+      color: $color-white;
     }
-
-    @include respond(phone){
-       font-weight: 500;
-    }
-
-    &__desc{
-        @include respond(phone){
-            padding-top: 5vh;
-            padding-left: 5vh;
-            padding-right: 5vh;
-            background-color: rgba($color-grey-light-1, .7);  
-        }
-
-    }
-
-    &__genre, &__price{
-       
-        @include respond(phone){
-            padding-left: 5vh;
-            background-color: rgba($color-grey-light-1, .7);  
-            width: 100%;  
-            }
-    }
-
-    &__btn{
-        @include respond(phone){
-            background-color: rgba($color-grey-light-1, .7);  
-            margin-top: -7vh; 
-           margin-left: 10vh;
-        }
-    }
-
-
-
-    &__title{
-        @extend .heading-primary--main;
-        margin-top: 0;
-        font-size: 6rem;
-
-        @include respond(tab-land){
-            font-size: 4rem;
-            // letter-spacing: 0.1rem;
-        }
-
-        @include respond(phone){
-            padding-top: 5vh;
-            padding-left: 5vh;
-            background-image:linear-gradient(to top,
-        rgba($color-grey-light-1, 0.7)0%,
-        rgba($color-grey-light-1, 0.3)20%,
-        rgba($color-grey-light-1, 0.7)60%,
-        rgba($color-grey-light-1, 0.5)80%,
-        rgba($color-grey-light-1, 0.4)85%,
-        rgba($color-grey-light-1, 0.3)90%,
-        rgba($color-grey-light-1, .2)100%,
-              transparent 60%);
-        animation: none;
-        }
-
-        &-xs{
-        font-size: 3rem;
-        letter-spacing: 2rem;
-
-        @include respond(tab-land){
-            font-size: 2.5rem;
-
-        }
-        }
-    }
-
-    &__btn{
-        text-decoration: none;
-        color: $color-primary; 
-        border: 1px solid $color-primary;
-        box-shadow: $box-shadow-light-allaround;
-        padding: 1rem;
-        border-radius: 3px;
-        transition: all .4s ease-in-out;
-        // animation: moveInBottom 0.8s ease;
-
-        &:hover{
-            transform: translateY(-.3rem);
-            box-shadow: $box-shadow-middle-allaround;
-            background-color: $color-primary-light;
-            color: $color-white;
-        }
-    }
+  }
 }
