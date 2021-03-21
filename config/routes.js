@@ -33,12 +33,15 @@ module.exports.routes = {
   'GET /payment': { action: 'account/view-payment' },
   'GET /play': { action: 'account/view-movie' },
   'GET /faq': { action: 'view-faq' },
+
+
+  // CHAT
   'GET /chat': { action: 'account/chat' },
+  // "GET /chat": "account/chat",
+  'PUT /user/login': 'account/chat-login',
 
 
 
-
-  // 'GET /movie': { action: 'content/movieDetail' },
   // signup
   'GET /signup': { action: 'entrance/view-signup' },
   'POST /signup': { action: 'entrance/signup' },

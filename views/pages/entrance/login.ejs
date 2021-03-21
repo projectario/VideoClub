@@ -1,23 +1,30 @@
+<script src="/js/login.js"></script>
+
+
 <head>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
 </head>
+
+<script defer src="/js/chat-login.js"></script>
+
 <nav class="navbar">
-    <div class="navbar__logo"><a href="/">VideoClub</a></div>
-    <div class="navbar__faq"><a href="/faq">FAQ</a></div>
-    <div class="navbar__login"><a href="/signup">SignUp</a></div>
+  <div class="navbar__logo"><a href="/">VideoClub</a></div>
+  <div class="navbar__faq"><a href="/faq">FAQ</a></div>
+  <div class="navbar__login"><a href="/signup">SignUp</a></div>
 </nav>
 <main class="signup-page">
-    <section class="form__container-login">
-        <form action="" method="POST" class="form__container-login--form">
-            <h4 class="heading-secondary ">Login</h4>
-            <input id="email" name="email" class="input" type="email" placeholder="E-Mail Address"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required oninput="validateEMail()">
-            <input id="password" name="password" class="input" type="password" placeholder="Password" required>
-            <p class="heading-secondary error"></p>
-            <a href="" class="btn btn-text">Forgot Password?</a>
-            <button class="btn btn-form">Login</button>
-        </form>
-    </section>
+  <section class="form__container-login">
+    <form action="" method="POST" class="form__container-login--form">
+      <h4 class="heading-secondary ">Login</h4>
+      <input id="email" name="email" class="input" type="email" placeholder="E-Mail Address"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required oninput="validateEMail()">
+      <input id="password" name="password" class="input" type="password" placeholder="Password" required>
+      <p class="heading-secondary error"></p>
+      <a href="" class="btn btn-text">Forgot Password?</a>
+      <button class="btn btn-form">Login</button>
+    </form>
+  </section>
 </main>
+
