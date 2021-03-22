@@ -44,6 +44,11 @@ module.exports.routes = {
   // signup
   'GET /signup': { action: 'entrance/view-signup' },
   'POST /signup': { action: 'entrance/signup' },
+
+  //Edit account info
+  'GET /account/password': { action: 'account/view-edit-password' },
+
+
   // logout
   'GET /logout': { action: 'account/logout' }
 
