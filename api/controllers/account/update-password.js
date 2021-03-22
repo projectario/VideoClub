@@ -31,7 +31,7 @@ module.exports = {
         await User.updateOne({ id: userId })
             .set({ password: newPassword });
         // sails.log(password)
-        // delete this.req.session.userId;
+        delete this.req.session.userId;
         throw { redirect: '/login' };
         // }
         // else {
