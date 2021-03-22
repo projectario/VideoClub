@@ -26,17 +26,14 @@ module.exports = {
         let userId = this.req.session.userId;
 
         var newPassword = await bcrypt.hash(password, 12)
-        // sails.log(password)
+
         // if (changePassword === confirmPassword) {
         await User.updateOne({ id: userId })
             .set({ password: newPassword });
-        // sails.log(password)
+
         delete this.req.session.userId;
         throw { redirect: '/login' };
-        // }
-        // else {
-        //     throw { problem: '<h1>Passwords not match!!!</h1>' }
-        // }
+
 
     }
 };
