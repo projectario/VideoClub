@@ -25,7 +25,7 @@ module.exports = {
     },
 
 
-    fn: async function ({ firstName, lastName, email, password, }) {
+    fn: async function ({ firstName, lastName, email, password, confirmPassword }) {
         let userId = this.req.session.userId;
 
         var newPassword = await bcrypt.hash(password, 12)
