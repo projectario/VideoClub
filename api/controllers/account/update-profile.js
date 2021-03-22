@@ -21,25 +21,38 @@ module.exports = {
         },
         problem: {
             responseType: 'badCombo'
+        },
+        message: {
+            responseType: 'Email update'
         }
     },
 
 
     fn: async function ({ firstName, lastName, email, password, confirmPassword }) {
+        let res = this.res
         let userId = this.req.session.userId;
+        let user = await User.findOne({ id: userId });
 
         var newPassword = await bcrypt.hash(password, 12)
 
-        // if (changePassword === confirmPassword) {
-        await User.updateOne({ id: userId })
-            .set({ password: newPassword });
-
+        if (newPassword === confirmPassword) {
+            await User.updateOne({ id: userId })
+                .set({ password: newPassword });
+        }
 
         //update email
-        var newEmailAddress = email;
 
-        await User.updateOne({ id: userId })
-            .set({ email: newEmailAddress });
+        // var newEmailAddress = email;
+
+        // if (newEmailAddress === User.find({ email: newEmailAddress })) {
+        //     throw { problem: 'Email Already in use' }
+        // } else {
+        //     await User.updateOne({ id: userId })
+        //         .set({ email: newEmailAddress });
+        //     return res.ok();
+        // }
+
+
 
 
         //update firstname
@@ -55,6 +68,8 @@ module.exports = {
 
         // delete the session so the user is logged out and has to re log in
         delete this.req.session.userId;
-        throw { redirect: '/login' };
+        // throw { redirect: '/login' };
+        // return { user }
     }
+
 };
