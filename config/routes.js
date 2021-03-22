@@ -28,15 +28,19 @@ module.exports.routes = {
   'GET /kidsmovies': { action: 'content/kidsmovies' },
   'GET /title/:id': { action: 'content/movie-detail' },
 
+
   'GET /payment/:id': { action: 'account/view-payment' },
   'GET /play': { action: 'account/view-movie' },
-  'GET /faq': { view: 'pages/faq' },
-  'GET /chat': { view: 'pages/chat' },
+  'GET /faq': { action: 'view-faq' },
+
+
+  // CHAT
+  'GET /chat': { action: 'account/chat' },
+  // "GET /chat": "account/chat",
+  'PUT /user/login': 'account/chat-login',
 
 
 
-
-  // 'GET /movie': { action: 'content/movieDetail' },
   // signup
   'GET /signup': { action: 'entrance/view-signup' },
   'POST /signup': { action: 'entrance/signup' },
