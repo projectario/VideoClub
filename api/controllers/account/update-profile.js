@@ -34,20 +34,27 @@ module.exports = {
         await User.updateOne({ id: userId })
             .set({ password: newPassword });
 
-            // var newEmailAddress = email;
-            // if (newEmailAddress !== undefined) {
-                //     newEmailAddress = newEmailAddress.toLowerCase();
-                //     let conflictingUser = await User.findOne({ email: email })
-                //     if (conflictingUser) throw 'badCombo'
-                // }
-                // var newFirstname = firstName;
-                // if (newFirstname !== undefined) { newFirstname.toLowerCase(); }
-                
-                // var newLastname = lastname;
-                // if (newLastname !== undefined) { newLastname.toLowerCase(); }
-                
-                
-                delete this.req.session.userId;
-                throw { redirect: '/login' };
+
+        //update email
+        var newEmailAddress = email;
+
+        await User.updateOne({ id: userId })
+            .set({ email: newEmailAddress });
+
+
+        //update firstname
+        var newFirstname = firstName;
+        await User.updateOne({ id: userId })
+            .set({ firstName: newFirstname });
+
+
+        // update lastname
+        var newLastname = lastName;
+        await User.updateOne({ id: userId })
+            .set({ lastName: newLastname });
+
+        // delete the session so the user is logged out and has to re log in
+        delete this.req.session.userId;
+        throw { redirect: '/login' };
     }
 };
