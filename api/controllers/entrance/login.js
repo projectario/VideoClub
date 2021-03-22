@@ -52,7 +52,6 @@ module.exports = {
         sails.log("LOGGED IN!!")
         this.req.session.userId = user.id;
         if (user.isKid) throw { redirect: '/kidsmovies' }
-
         throw { redirect: '/movies' }
       }
 

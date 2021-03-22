@@ -9,7 +9,7 @@ module.exports = {
 
 
     inputs: {
-        changePassword: { type: 'string' },
+        password: { type: 'string' },
         confirmPassword: { type: 'string', required: true },
     },
     exits: {
@@ -22,10 +22,10 @@ module.exports = {
     },
 
 
-    fn: async function ({ changePassword, confirmPassword }) {
+    fn: async function ({ password, confirmPassword }) {
         let userId = this.req.session.userId;
 
-        var newPassword = changePassword;
+        var newPassword = await bcrypt.hash(password, 12)
         // sails.log(password)
         // if (changePassword === confirmPassword) {
         await User.updateOne({ id: userId })
