@@ -9,6 +9,9 @@ module.exports = {
 
 
     inputs: {
+        firstName: { type: 'string' },
+        lastName: { type: 'string' },
+        email: { type: 'string' },
         password: { type: 'string' },
         confirmPassword: { type: 'string', required: true },
     },
@@ -22,7 +25,7 @@ module.exports = {
     },
 
 
-    fn: async function ({ password, }) {
+    fn: async function ({ firstName, lastName, email, password, }) {
         let userId = this.req.session.userId;
 
         var newPassword = await bcrypt.hash(password, 12)
@@ -31,20 +34,20 @@ module.exports = {
         await User.updateOne({ id: userId })
             .set({ password: newPassword });
 
-        delete this.req.session.userId;
-        throw { redirect: '/login' };
-        // var newEmailAddress = email;
-        // if (newEmailAddress !== undefined) {
-        //     newEmailAddress = newEmailAddress.toLowerCase();
-        //     let conflictingUser = await User.findOne({ email: email })
-        //     if (conflictingUser) throw 'badCombo'
-        // }
-        // var newFirstname = firstName;
-        // if (newFirstname !== undefined) { newFirstname.toLowerCase(); }
-
-        // var newLastname = lastname;
-        // if (newLastname !== undefined) { newLastname.toLowerCase(); }
-
-
+            // var newEmailAddress = email;
+            // if (newEmailAddress !== undefined) {
+                //     newEmailAddress = newEmailAddress.toLowerCase();
+                //     let conflictingUser = await User.findOne({ email: email })
+                //     if (conflictingUser) throw 'badCombo'
+                // }
+                // var newFirstname = firstName;
+                // if (newFirstname !== undefined) { newFirstname.toLowerCase(); }
+                
+                // var newLastname = lastname;
+                // if (newLastname !== undefined) { newLastname.toLowerCase(); }
+                
+                
+                delete this.req.session.userId;
+                throw { redirect: '/login' };
     }
 };
