@@ -38,7 +38,7 @@ module.exports = {
     if (user.isKid == true && film.properForKids == false) throw { redirect: '/kidsmovies' };
 
     // All done.
-    return { film };
+    return { film, user };
 
   }
 
