@@ -47,6 +47,7 @@ module.exports.routes = {
 
   //Edit account info
   'GET /account/password': { action: 'account/view-edit-password' },
+  'POST /account/password': { action: 'account/update-password' },
 
 
   // logout

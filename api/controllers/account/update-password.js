@@ -9,23 +9,34 @@ module.exports = {
 
 
     inputs: {
-        password: { type: 'string' },
+        changePassword: { type: 'string' },
         confirmPassword: { type: 'string', required: true },
+    },
+    exits: {
+        redirect: {
+            responseType: 'redirect'
+        },
+        problem: {
+            responseType: 'badCombo'
+        }
     },
 
 
-    fn: async function ({ password, confirmPassword }) {
-        if (this.req.session.userId) {
-            sails.log(password)
-            if (password === confirmPassword) {
-                await User.updateOne({ id: this.req.me.id })
-                    .set({ password: await bcrypt.hash(password, 12) })
+    fn: async function ({ changePassword, confirmPassword }) {
+        let userId = this.req.session.userId;
 
-                throw { redirect: '/login' };
-            }
-            else {
-                throw { problem: '<h1>Passwords not match!!!</h1>' }
-            }
-        }
+        var newPassword = changePassword;
+        // sails.log(password)
+        // if (changePassword === confirmPassword) {
+        await User.updateOne({ id: userId })
+            .set({ password: newPassword });
+        // sails.log(password)
+        // delete this.req.session.userId;
+        throw { redirect: '/login' };
+        // }
+        // else {
+        //     throw { problem: '<h1>Passwords not match!!!</h1>' }
+        // }
+
     }
 };
