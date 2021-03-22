@@ -45,7 +45,7 @@ module.exports = {
 
     }
     // All done.
-    return { listOfMovies, genre };
+    return { listOfMovies, genre, user };
 
   }
 

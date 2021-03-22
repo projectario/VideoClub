@@ -24,6 +24,7 @@ module.exports.policies = {
   'view-homepage' : true, 
   'entrance/*': true,
   'account/logout': true,
+  'view-faq': true,
 
 
 };
