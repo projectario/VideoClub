@@ -32,10 +32,14 @@ module.exports = {
         let res = this.res
         let userId = this.req.session.userId;
         let user = await User.findOne({ id: userId });
+        sails.log(password)
+        sails.log(confirmPassword)
+
+        // const passwordValid = await bcrypt.compare(password, confirmPassword)
 
 
-        const passwordValid = await bcrypt.compare(password, confirmPassword)
-        if (!passwordValid) {
+
+        if (!(password === confirmPassword)) {
             throw { redirect: '/account/profile' }
         } else {
             var newPassword = await bcrypt.hash(password, 12)
