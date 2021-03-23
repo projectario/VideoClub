@@ -32,11 +32,6 @@ module.exports = {
         let res = this.res
         let userId = this.req.session.userId;
         let user = await User.findOne({ id: userId });
-        sails.log(password)
-        sails.log(confirmPassword)
-
-        // const passwordValid = await bcrypt.compare(password, confirmPassword)
-
 
 
         if (!(password === confirmPassword)) {
