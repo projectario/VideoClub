@@ -10,6 +10,14 @@
     &__users{
         height: 86vh;
         padding: 2rem;
+        list-style: none;
+        overflow: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+          }
 
 
         &-header{
@@ -79,7 +87,15 @@
     &__messages{
         padding: 3rem;
         width: 70%;
+        height: 70vh;
         margin: 0 auto;
+        overflow: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+          }
         // border-bottom: 1px solid $color-primary;
         // box-shadow: $box-shadow-light-allaround;
         @include flex-column;
@@ -90,6 +106,12 @@
     
         @include respond(phone){
             width: 100%;
+            
+        }
+
+        &-sender{
+            align-self: flex-end;
+            text-align: right;
             
         }
 
