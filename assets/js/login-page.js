@@ -25,8 +25,8 @@ $(function() {
   //  ┴ ┴ ┴  ┴ └─┘┴ ┴┴   ┴ ╩═╝└─┘└─┘┴┘└┘  └  └─┘┘└┘└─┘ ┴ ┴└─┘┘└┘
 
   function attemptLogin() {
-    var username = $('.login-page .username-input').val();
-    if (!username) { return; }
+    // var username = $('.login-page .username-input').val();
+    // if (!username) { return; }
 
     // Attempt to log the user in.
     io.socket.put('/user/login', {username: username}, function(body, response) {
@@ -35,19 +35,19 @@ $(function() {
       if (response.statusCode === 404) {
 
         // Attempt to create a user.
-        io.socket.post('/user', {username: username}, function(body, response) {
+        // io.socket.post('/user', {username: username}, function(body, response) {
 
-          if (response.statusCode !== 200) {
-            alert('An error occurred trying to log you in with that username.  Please try again.');
-            return;
-          }
+        //   if (response.statusCode !== 200) {
+        //     alert('An error occurred trying to log you in with that username.  Please try again.');
+        //     return;
+        //   }
 
-          // Try logging in again.
-          attemptLogin();
+        //   // Try logging in again.
+        //   attemptLogin();
 
-          return;
+        //   return;
 
-        });
+        // });
 
         return;
 

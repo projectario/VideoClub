@@ -35,6 +35,8 @@ module.exports.routes = {
 
 
   // CHAT
+
+  // 'GET /chat/login' : 'account/chat-login',
   'GET /chat': { action: 'account/chat' },
   // "GET /chat": "account/chat",
   'PUT /user/login': 'account/chat-login',
