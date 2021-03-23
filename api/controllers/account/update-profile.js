@@ -33,19 +33,19 @@ module.exports = {
         let userId = this.req.session.userId;
         let user = await User.findOne({ id: userId });
 
-        var newPassword = await bcrypt.hash(password, 12)
-        const passwordValid = bcrypt.compare(newPassword, confirmPassword)
+
+        const passwordValid = await bcrypt.compare(password, confirmPassword)
         if (!passwordValid) {
-            throw { redirect: '/account/profile'}
+            throw { redirect: '/account/profile' }
         } else {
-            
+            var newPassword = await bcrypt.hash(password, 12)
             await User.updateOne({ id: userId })
-                    .set({ password: newPassword });
+                .set({ password: newPassword });
             delete this.req.session.userId;
             throw { redirect: '/login' };
         }
-            
-    
+
+
         // if (newPassword === confirmPassword) {
         //     var newPassword = await bcrypt.hash(password, 12)
 
