@@ -34,11 +34,26 @@ module.exports = {
         let user = await User.findOne({ id: userId });
 
         var newPassword = await bcrypt.hash(password, 12)
-
-        if (newPassword === confirmPassword) {
+        const passwordValid = bcrypt.compare(newPassword, confirmPassword)
+        if (!passwordValid) {
+            throw { redirect: '/account/profile'}
+        } else {
+            
             await User.updateOne({ id: userId })
-                .set({ password: newPassword });
+                    .set({ password: newPassword });
+            delete this.req.session.userId;
+            throw { redirect: '/login' };
         }
+            
+    
+        // if (newPassword === confirmPassword) {
+        //     var newPassword = await bcrypt.hash(password, 12)
+
+        //     await User.updateOne({ id: userId })
+        //             .set({ password: newPassword });
+        // }
+        // await User.updateOne({ id: userId })
+        //         .set({ password: newPassword });
 
         //update email
 
@@ -67,7 +82,7 @@ module.exports = {
             .set({ lastName: newLastname });
 
         // delete the session so the user is logged out and has to re log in
-        delete this.req.session.userId;
+        // delete this.req.session.userId;
         // throw { redirect: '/login' };
         // return { user }
     }
