@@ -36,7 +36,7 @@ module.exports = {
     let isUser = await User.findOne({ email: email.toLowerCase() });
 
     //Check to see if we have this user id the database
-    if (!isUser) throw { problem: '<h1>We dont know anyone that goes by that name! Try Again!</h1>' } // custom response about not matching email?
+    if (!isUser) throw { problem: '<h1>Something went wrong! Please try Again!</h1>' } // custom response about not matching email?
 
     // then find the user and match the provided password with the one in the database
     else if (isUser) {

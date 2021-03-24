@@ -44,10 +44,18 @@ module.exports.routes = {
   // signup
   'GET /signup': { action: 'entrance/view-signup' },
   'POST /signup': { action: 'entrance/signup' },
-  
-  //Update profile info
-  'GET /account/profile': { action: 'account/view-edit-profile' },
-  'POST /account/profile': { action: 'account/update-profile' },
+
+  //Update password
+  'GET /account/password': { action: 'account/settings/view-edit-password' },
+  'POST /account/password': { action: 'account/settings/update-password' },
+
+  //Update email 
+  'GET /account/email': { action: 'account/settings/view-edit-email' },
+  'POST /account/email': { action: 'account/settings/update-email' },
+
+  //Update name 
+  'GET /account/name': { action: 'account/settings/view-edit-name' },
+  'POST /account/name': { action: 'account/settings/update-name' },
 
 
 
