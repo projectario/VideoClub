@@ -21,7 +21,7 @@ module.exports = {
             responseType: 'badCombo'
         },
         message: {
-            responseType: 'Email update'
+            responseType: 'Password update'
         }
     },
 
@@ -31,28 +31,22 @@ module.exports = {
         let userId = this.req.session.userId;
         let user = await User.findOne({ id: userId });
         // sails.log(user)
-
-
-
-
         let match = await bcrypt.compare(password, user.password)
-
-        sails.log(user.password)
-        sails.log(match)
 
         if (match) {
             if (!(newPassword === confirmPassword)) {
-                throw { redirect: '/account/password' }
+
+                return { redirect: '/account/password' }
             } else {
                 var changedPassword = await bcrypt.hash(newPassword, 12)
                 await User.updateOne({ id: userId })
                     .set({ password: changedPassword });
                 delete this.req.session.userId;
-                throw { redirect: '/login' };
+                return { redirect: '/login', };
             }
         } else {
 
-            throw { redirect: '/account/password' }
+            return { problem: 'Wrong password' }
         }
 
 

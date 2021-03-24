@@ -26,7 +26,7 @@ module.exports = {
 
 
     fn: async function ({ firstName, lastName }) {
-        let res = this.res
+
         let userId = this.req.session.userId;
         let user = await User.findOne({ id: userId });
         sails.log(user)
