@@ -17,11 +17,13 @@
     <div class="navbar__login"><a href="/logout">Logout</a></div>
 </nav>
 <main class="signup-page">
-    <section class="form__container">
-        <form action="/account/email" method="POST" class="form__container-form">
-            <input id="email" name="email" class="input" type="email" placeholder="New e-Mail Address"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required oninput="validateEMail()" />
-            <button class="btn btn-form">Update E-mail</button>
-        </form>
+    <section class="form__container-settings">
+        <h4 class="heading-secondary ">settings</h4>
+        <div class="form__container-settings--img"></div>
+        <div class="form__container-settings--links">
+            <a href="/account/email" class="btn btn-text">change e-mail</a>
+            <a href="/account/password" class="btn btn-text">change password</a>
+            <a href="/account/name" class="btn btn-text">change name</a>
+        </div>
     </section>
 </main>
