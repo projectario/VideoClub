@@ -15,6 +15,7 @@ function UserList(app) {
 
   this.users = app.users;
 
+
 }
 
 /**
@@ -39,7 +40,9 @@ UserList.prototype.addNewUserToList = function (user) {
   var userListEl = $('.chat-page .user-list');
 
   // Create the new user item.
+
   var userEl = $('<li class="chat-container__users-item" data-id="' + user.id + '">' + user.firstName + '</li>');
+
 
   // If the new user is offline, add the "offline" class.
   if (!user.online) {

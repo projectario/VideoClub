@@ -29,7 +29,7 @@ module.exports = {
 
     // throw { redirect: '/play' }
     // Respond with view.
-    return { film };
+    return { film, user };
 
 
   }
