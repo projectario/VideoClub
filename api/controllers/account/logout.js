@@ -18,7 +18,7 @@ module.exports = {
     fn: async function () {
 
         await User.updateOne({ id: this.req.session.userId })
-          .set({ isOnline: false })
+          .set({ online: false })
         delete this.req.session.userId;
 
         // Broadcast a message that we can display in other open tabs.

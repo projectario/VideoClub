@@ -65,12 +65,14 @@ $(function() {
           case 'created':
             userList.addNewUserToList(notification.data);
             app.users.push(notification.data);
+            sails.log('created a user' + user)
+
             break;
 
           // If a user was updated, update their status in the user list.
           case 'updated':
             var user = _.find(app.users, {id: notification.id});
-
+            sails.log('updated a user' + user)
             // If the updated user is the same as the logged in user, and they are
             // no longer online, reload the page.  This will log this client out and
             // show the login page.
