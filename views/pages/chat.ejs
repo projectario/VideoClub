@@ -10,22 +10,20 @@
     crossorigin="anonymous"
   />
   <!-- Chat Scripts -->
-  <script src="/js/chat-room.js"></script>
-  <script src="/js/user-list.js"></script>
-  <script src="/js/chat-page.js"></script>
+
 </head>
 <nav class="navbar">
   <div class="navbar__logo"><a href="/">VideoClub</a></div>
   <div class="navbar__faq"><a href="/faq">FAQ</a></div>
   <div class="navbar__user">
-    <a href="/"><i class="far fa-user"></i> <%= user.firstName %> </a>
+    <a href="/"><i class="far fa-user"></i> <%= username %> </a>
   </div>
   <div class="navbar__login"><a href="/logout">Logout</a></div>
 </nav>
 
 <main class="chat-container">
   <div class="chat-container__heading heading-secondary">
-    Welcome to the chat room <%= username.firstName %>
+    Welcome to the chat room <%= username %>
   </div>
   <div class="chat-container__users">
     <h4 class="chat-container__users-header heading-tertiary">Users</h4>
