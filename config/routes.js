@@ -33,7 +33,7 @@ module.exports.routes = {
   'GET /faq': { view: 'pages/faq' },
 
 
-
+  'GET /chat': { action: 'account/chat' },
   // 'GET /movie': { action: 'content/movieDetail' },
   // signup
   'GET /signup': { action: 'entrance/view-signup' },

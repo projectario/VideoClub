@@ -13,6 +13,7 @@ module.exports = {
     email: { type: 'string' },
     password: { type: 'string' },
     isKid: { type: 'boolean' },
+    online: { type: 'boolean' },
     rents: {
       collection: 'Rent',
       via: 'userId'
