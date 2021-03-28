@@ -9,12 +9,12 @@
     top: 0;
     z-index: 10;
 
-    &__logo, &__faq, &__login{ 
-        // text-align: center;
+    &__logo, &__faq, &__login, &__chat, &__user{ 
+        // @include flex-row;
         font-size: $default-font-size;
         letter-spacing: .5rem;
         transition: all 0.1s ease-in-out;
-        margin: 0 3vw;
+        margin: 0 2vw;
         a{
             text-decoration: none;
             color: $color-white;
@@ -26,5 +26,10 @@
             
         }
     }
-    
+
+
+    &__user{
+        width: 100%;
+    }  
 }
+

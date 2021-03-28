@@ -1,0 +1,157 @@
+.chat-container{
+    font-size: $default-font-size;
+    &__heading{
+        height: 7vh;
+        margin-bottom: 0;
+        font-size: $default-font-size;
+        padding-top: 2vh;
+    }
+
+    &__users{
+        height: 86vh;
+        padding: 2rem;
+        list-style: none;
+        overflow: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+          }
+
+
+        &-header{
+            text-align: center;
+        }
+
+        &-item{
+            list-style: none;
+            padding: 1rem;
+            box-shadow: $box-shadow-light-allaround;
+            background-color: $color-grey-light-2;
+            margin: 1rem;
+            
+        }
+        
+    }
+
+    &__input{
+        @include flex-row;
+        justify-content: space-around;
+        align-items: center;
+        width: 70%;
+        margin: 0 auto;
+
+        @include respond(tab-port){
+            width: 80%;
+        }
+        
+        @include respond(phone){
+            width: 90%;
+        }
+
+        &--text{
+            height: 60%;
+            width: 70%;
+            border-radius: 30px;
+            box-shadow: $box-shadow-light-allaround;
+
+            @include respond(phone){
+                height: 50%;
+            }
+
+            &:focus{
+                border: none;
+            }
+        }
+
+        &--btn{
+            border: none;
+            padding: 1.5rem 2rem;
+            border-radius: 30px;
+            background-color: $color-primary;
+            color: $color-white;
+            box-shadow: $box-shadow-light-allaround;
+            transition: all .4s ease-in-out;
+            font-size: $default-font-size;
+            cursor: pointer;
+
+            &:hover{
+                transform: translateY(-.1rem);
+                box-shadow: $box-shadow-middle-allaround;
+            }
+        }
+        
+    }
+
+    &__messages{
+        padding: 3rem;
+        width: 70%;
+        height: 70vh;
+        margin: 0 auto;
+        overflow: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+          }
+        // border-bottom: 1px solid $color-primary;
+        // box-shadow: $box-shadow-light-allaround;
+        @include flex-column;
+        
+        @include respond(tab-port){
+            width: 80%;
+        }
+    
+        @include respond(phone){
+            width: 100%;
+            
+        }
+
+        &-sender{
+            align-self: flex-end;
+            text-align: right;
+            
+        }
+
+
+        &-sent{
+            // justify-content: flex-end;
+            align-self: flex-end;
+            text-align: right;
+            background-color: $color-primary;
+            color: $color-white;
+            border-radius: 30px;
+            // width: 50%;
+            padding: 1rem;
+
+            @include respond(phone){
+                padding: .5rem;
+                margin: 1rem;
+                
+            }
+        }
+
+        &-received{
+            align-self: flex-start;
+            text-align: left;
+            background-color: $color-secondary-light;
+            color: $color-white;
+            border-radius: 30px;
+            // width: 50%;
+            padding: 1rem;
+
+            @include respond(phone){
+                padding: .5rem;
+                margin: 1rem;
+                
+            }
+        }
+    }
+
+}
+
+.offline{
+    display: none;
+}

@@ -1,3 +1,8 @@
+<head>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+</head>
 <nav class="navbar">
     <div class="navbar__logo"><a href="/">VideoClub</a></div>
     <div class="navbar__faq"><a href="/faq">FAQ</a></div>
@@ -5,8 +10,10 @@
 
 </nav>
 <main class="play__container">
-    <video class="play__container-video" controls>
-        <source src="../images/hollywood.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <div>
+        <iframe width=" 720" height="415" src=<%=film.url%> frameborder="0"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+
+    </div>
 </main>

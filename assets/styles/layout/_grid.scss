@@ -31,6 +31,32 @@
     ". section-overview__photo-3 . section-overview__text-3 section-overview__text-3 section-overview__text-3 ."
     ". . section-overview__text-4 section-overview__text-4 section-overview__text-4 section-overview__photo-4 ."
     ". section-overview__photo-5 . section-overview__text-5 section-overview__text-5 section-overview__text-5 .";
+
+    @include respond(tab-land){
+      grid-template-areas:
+    ". section-overview__photo-1 section-overview__photo-1 . section-overview__text-1 section-overview__text-1 section-overview__text-1 "
+    ". section-overview__text-2 section-overview__text-2 . section-overview__photo-2 section-overview__photo-2 ."
+    ". section-overview__photo-3 section-overview__photo-3 . section-overview__text-3 section-overview__text-3 section-overview__text-3 "
+    ". section-overview__text-4 section-overview__text-4 . section-overview__photo-4 section-overview__photo-4 ."
+    ". section-overview__photo-5 section-overview__photo-5 . section-overview__text-5 section-overview__text-5 section-overview__text-5 ";
+  }
+
+  // @include respond(tab-port){
+  //     font-size: 50%;
+  // }
+
+  @include respond(tab-port){
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "section-overview__photo-1 section-overview__text-1"
+    "section-overview__text-2 section-overview__photo-2"
+    "section-overview__photo-3 section-overview__text-3"
+    "section-overview__text-4 section-overview__photo-4"
+    "section-overview__photo-5 section-overview__text-5";
+  }
+
+  
     
 
     &__photo-1 { grid-area: section-overview__photo-1; }
@@ -47,24 +73,33 @@
 
 .navbar{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 7vh;
   gap: 0px 0px;
   grid-template-areas:
-  "navbar__logo . . . navbar__faq navbar__login";
+    "navbar__logo . . . . . . navbar__chat navbar__faq navbar__user navbar__login";
 
   &__logo { grid-area: navbar__logo; }
   &__faq { grid-area: navbar__faq; }
   &__login { grid-area: navbar__login; }
+  &__chat { grid-area: navbar__chat; }
+  &__user { grid-area: navbar__user; }
 
 }
 
 .movie__list{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
   grid-gap: 3rem 2rem;
   grid-auto-rows: 30vh;
   margin: 5vh auto;
+
+  @include respond(phone){
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    margin: 0;
+
+        
+    }
   
 }
 
@@ -82,8 +117,12 @@
     ". . . . . ."
     ". . . movie-container__title movie-container__title movie-container__title"
     ". . . movie-container__desc movie-container__desc movie-container__genre"
-    ". . . . movie-container__price movie-container__btn"
+    ". . . movie-container__trailer movie-container__price movie-container__btn"
     ". . . . . .";
+
+    @include respond(phone){
+      @include flex-column;
+  }
 
     &__logo { grid-area: movie-container__logo; }
     &__logout { grid-area: movie-container__logout; }
@@ -93,7 +132,25 @@
     &__desc { grid-area: movie-container__desc; }
     &__genre { grid-area: movie-container__genre; }
     &__price { grid-area: movie-container__price; }
+    &__trailer { grid-area: movie-container__trailer; }
     &__btn { grid-area: movie-container__btn; }
 }
 
+.chat-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.3fr 1.7fr 1.4fr 0.6fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "chat-container__heading chat-container__heading chat-container__heading chat-container__heading"
+    "chat-container__messages chat-container__messages chat-container__messages chat-container__users"
+    "chat-container__messages chat-container__messages chat-container__messages chat-container__users"
+    "chat-container__input chat-container__input chat-container__input chat-container__users";
 
+    &__heading { grid-area: chat-container__heading; }
+    &__users { grid-area: chat-container__users; }
+    &__input { grid-area: chat-container__input; }
+    &__messages { grid-area: chat-container__messages; }
+
+
+}

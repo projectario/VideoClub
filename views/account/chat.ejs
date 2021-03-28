@@ -1,33 +1,70 @@
 <%- exposeLocalsToBrowser(); %>
 
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous" />
 
-    <div class="chat-page">
+  </head>
+  <nav class="navbar">
+    <div class="navbar__logo"><a href="/">VideoClub</a></div>
+    <div class="navbar__faq"><a href="/faq">FAQ</a></div>
+    <div class="navbar__user"><a href="/"><i class="far fa-user"></i>
+        <%= username.firstName %>
+      </a></div>
+    <div class="navbar__login"><a href="/logout">Logout</a></div>
+  </nav>
 
-      <div class="header">
-        <h1>Welcome to SailsChat, <%= username %>!</h1>
-        <span class="logout">click here to log out</span>
-      </div>
 
-      <div class="main">
+  <!-- <div class="chat-page"> -->
 
-        <div class="chat-room-section">
-          <div class="chat-transcript-container">
-            <div class="chat-transcript"></div>
-          </div>
-          <div class="chat-controls-container">
-            <div class="chat-controls">
-              <input class="chat-input" type="text" placeholder="Enter a message..." />
-              <button class="send-chat-button">Send chat</button>
-            </div>
-          </div>
-        </div>
+  <!-- <div class="main"> -->
+  <!-- <div class="user-list-section">
+      <div class="header">Users</div>
+      <ul class="user-list">
+      </ul>
+    </div> -->
+  <!-- <div class="chat-room-section"> -->
+  <!-- <div class="chat-container__messages">
+        <div class="chat-transcript"></div>
+      </div> -->
+  <!-- <div class="chat-container__input">
+        <input class="chat-input chat-container__input--text input" type="text" placeholder="Enter a message..." />
+        <button class="send-chat-button chat-container__input--btn">Send chat</button>
+      </div> -->
+  <!-- </div> -->
 
-        <div class="user-list-section">
-          <div class="header">Users</div>
-          <ul class="user-list">
-          </ul>
-        </div>
 
-      </div>
 
+  <!-- </div> -->
+
+  <!-- </div> -->
+
+  <main class="chat-container chat-page">
+    <div class="chat-container__heading heading-secondary">Welcome to the chat room <%= username.firstName %>
     </div>
+    <div class="chat-container__users">
+      <h4 class="chat-container__users-header heading-tertiary ">Users</h4>
+      <ul class="chat-container__users-list user-list">
+
+      </ul>
+    </div>
+    <div class="chat-transcript-container chat-container__messages">
+
+      <!-- <p class="chat-container__messages-sent">Lorem ipsum dolor sit amet.</p>
+    <p class="chat-container__messages-received">Lorem, ipsum dolor.</p>
+    <p class="chat-container__messages-sent">hello hello</p>
+    <p class="chat-container__messages-received">bye bye</p>
+    <p class="chat-container__messages-sent">Lorem ipsum dolor sit amet.</p>
+    <p class="chat-container__messages-received">Lorem, ipsum dolor.</p> -->
+    </div>
+    <div class="chat-container__input">
+      <input type="text" name="" id="" class="chat-input chat-container__input--text input"
+        placeholder="type your message here...">
+      <button class="send-chat-button chat-container__input--btn"> Send</button>
+    </div>
+
+  </main>
