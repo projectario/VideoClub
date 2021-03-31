@@ -29,7 +29,7 @@ module.exports = {
 
         let userId = this.req.session.userId;
         let user = await User.findOne({ id: userId });
-        sails.log(user)
+        // sails.log(user)
         // sails.log(user)
 
         //update firstname
