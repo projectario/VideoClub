@@ -15,6 +15,7 @@ module.exports = {
     storyline: { type: 'string' },
     releasedDate: { type: 'string' }, // type??
     rating: { type: 'number' },
+    bookId: {type: 'number'},
     posterUrl: { type: 'string' },
     properForKids: { type: 'boolean' },
     url: { type: 'string' },
