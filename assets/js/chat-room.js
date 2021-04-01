@@ -11,11 +11,7 @@
  * Constructor
  * @param {object} app A reference to the main chat page app.
  */
-<<<<<<< HEAD
 function ChatRoom (app) {
-=======
-function ChatRoom(app) {
->>>>>>> 805f40bc3c62c3e774297aa2d7ac35457629306c
 
   // Save a reference to the app's message list.
   this.messages = app.messages;
@@ -29,11 +25,7 @@ function ChatRoom(app) {
  * Initialize the chat room component.
  * @param  {array} messages The initial list of messages to put in the transcript.
  */
-<<<<<<< HEAD
 ChatRoom.prototype.init = function(messages) {
-=======
-ChatRoom.prototype.init = function (messages) {
->>>>>>> 805f40bc3c62c3e774297aa2d7ac35457629306c
 
   // Save a reference to this object.
   var self = this;
@@ -42,21 +34,13 @@ ChatRoom.prototype.init = function (messages) {
   _.each(this.messages, this.renderMessage.bind(this));
 
   // Add a utility for sending a chat.
-<<<<<<< HEAD
   function sendChat (cb) {
-=======
-  function sendChat(cb) {
->>>>>>> 805f40bc3c62c3e774297aa2d7ac35457629306c
     // Get the chat message.
     var msg = $('.chat-input').val();
     // If no message was entered, do nothing.
     if (!msg) { return; }
     // Create a new chat message via the API.
-<<<<<<< HEAD
     io.socket.post('/chatmessage', { user: self.loggedInUserId, text: msg}, function(body, response) {
-=======
-    io.socket.post('/chatmessage', { user: self.loggedInUserId, text: msg }, function (body, response) {
->>>>>>> 805f40bc3c62c3e774297aa2d7ac35457629306c
       if (response.statusCode !== 200) {
         return alert('An error occurred sending your chat.  Please try again.');
       }
@@ -65,8 +49,8 @@ ChatRoom.prototype.init = function (messages) {
   }
 
   // Send a chat whenever the "send-chat" button is pressed, or enter is pressed inside the chat input.
-  $('.send-chat-button').click(function () {
-    sendChat(function (err, message) {
+  $('.send-chat-button').click(function() {
+    sendChat(function(err, message) {
       // Always scroll to the bottom when adding a new message as a result of user interaction.
       self.renderMessage(message, true);
       $('.chat-input').val('').focus();
@@ -74,7 +58,7 @@ ChatRoom.prototype.init = function (messages) {
   });
 
   // When enter is pressed in the chat input, "click" the send button.
-  $('.chat-input').keydown(function (e) {
+  $('.chat-input').keydown(function(e) {
     if (e.keyCode === 13) {
       $('.send-chat-button').click();
     }
@@ -87,7 +71,7 @@ ChatRoom.prototype.init = function (messages) {
  * @param  {object} message The message object.
  * @param  {boolean} scroll Whether to force a scroll to the bottom of the transcript.
  */
-ChatRoom.prototype.renderMessage = function (message, scroll) {
+ChatRoom.prototype.renderMessage = function(message, scroll) {
 
   // Get the chat transcript container.
   var chatTranscriptContainerEl = $('.chat-page .chat-transcript-container');
@@ -97,19 +81,19 @@ ChatRoom.prototype.renderMessage = function (message, scroll) {
 
   // If the message has a user attached, add a regular chat line.
   if (message.user) {
-    chatLineEl = $('<div class="chat-line chat-container__messages-sender">' + message.user.firstName + '<div class="chat-container__messages-sent">' + message.text + '</div></div>');
+    chatLineEl = $('<div class="chat-line"><span class="username">' + message.user.firstName + ':&nbsp;</span><span class="text">' + message.text + '</span></div>');
   }
 
   // Otherwise add an "admin" chat line.
   else {
-    chatLineEl = $('<div class="admin-chat-line"><span class="chat-container__messages-received">' + message.text + '</span></div>');
+    chatLineEl = $('<div class="admin-chat-line"><span class="text">' + message.text + '</span></div>');
   }
 
   // Determine whether the transcript is scrolled all the way to the bottom.
   var atBottom = chatTranscriptContainerEl.scrollTop() >= (chatTranscriptContainerEl[0].scrollHeight - chatTranscriptContainerEl[0].clientHeight);
 
   // Add the new chat line to the transcript.
-  $('.chat-page .chat-container__messages').append(chatLineEl);
+  $('.chat-page .chat-transcript').append(chatLineEl);
 
   // Scroll to the bottom of the transcript if it was at the bottom before, or if we're asked to.
   if (scroll || atBottom) {

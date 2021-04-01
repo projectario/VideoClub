@@ -45,12 +45,12 @@ module.exports = {
       let match = false
       match = await bcrypt.compare(password, user.password)
 
-      sails.log(user.password)
 
       if (match) {
 
         sails.log("LOGGED IN!!")
         this.req.session.userId = user.id;
+        await User.updateOne({id: user.id}).set({online: true})
         if (user.isKid) throw { redirect: '/kidsmovies' }
         throw { redirect: '/movies' }
       }
