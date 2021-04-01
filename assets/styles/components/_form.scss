@@ -1,183 +1,184 @@
-.form{
-    &__container{
-        background-color: $color-white;
-        width: 30%;
-        margin: 10vh auto ;
-        @include flex-column;
-        justify-content: center;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        transition: all 0.8s ease-in-out;
+.form {
+  &__container {
+    background-color: $color-white;
+    width: 30%;
+    margin: 10vh auto;
+    @include flex-column;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition: all 0.8s ease-in-out;
 
-        @include respond(tab-land){
-            width: 40%;
-        }
-    
-        @include respond(tab-port){
-            width: 50%;
-        }
-    
-        @include respond(phone){
-            width: 60%;
-        }
-
-        &-form{
-            @include flex-column;    
-            justify-content: center;
-            // width: 30%;
-            padding: 3rem;
-            padding-top: 2rem; 
-        }
+    @include respond(tab-land) {
+      width: 40%;
     }
 
-    &__image-adult{
-        height: 30vh;
-        background-image: url(../images/comp-1-rem.png);
-        background-repeat: no-repeat;
-        background-size: 90%;
-        background-position: center;
-        margin-top: -10rem;
-        transition: all 0.8s ease-in-out;
-        z-index: 20;
-
-        @include respond(tab-land){
-            background-size: 80%;
-            margin-top: -10rem;
-            height: 25vh;
-
-            
-        }
-    
-        @include respond(tab-port){
-            margin-top: -12rem;
-            height: 20vh;
-            
-        }
-    
-        @include respond(phone){
-            background-size: 90%;
-            height: 20vh;
-            
-        }
-    
-    } 
-
-    &__image-login{
-        @extend .form__image-adult;
-        background-image: url(../images/movieposter-rem.jpg);
-    }
-    
-    &__image-kids{
-        @extend .form__image-adult;
-        background-image: url(../images/kids-rem.png);
-        background-size: 115%;
+    @include respond(tab-port) {
+      width: 50%;
     }
 
-    &__container-login{
-        @include flex-row;
-        background-image:linear-gradient(105deg,
-             rgba($color-white, 1) 0%,
-             rgba($color-white, .9) 20%,
-             rgba($color-white, .8) 50%,
-             rgba($color-white, .5) 60%,
-              transparent 80%) ,
-              url(../images/poster.jpg);
-        background-size: cover;
-        background-position: right;
-        background-repeat: no-repeat;
-        margin-top: 10vh;
-        width: 40%;
-        border-radius: 3px;
-        box-shadow: $box-shadow-intense-blr;
-        justify-content: space-between;
-        padding: 3rem;
-        &--form{
-            @include flex-column;
-            justify-content: center;
-            
-        }
-        
-        @include respond(tab-land){
-            width: 50%;
-        }
-    
-        @include respond(tab-port){
-            width: 60%;
-        }
-    
-        @include respond(phone){
-            width: 80%;
-        }
-    
+    @include respond(phone) {
+      width: 60%;
     }
 
-    &__container-payment{
-        @extend .form__container-login;
-        background-image:linear-gradient(105deg,
-             rgba($color-white, 1) 0%,
-             rgba($color-white, 1) 20%,
-             rgba($color-white, 1) 60%,
-             rgba($color-white, .2) 80%,
-             rgba($color-white, .2) 90%,
-             rgba($color-white, .1) 100%,
+    &-form {
+      @include flex-column;
+      justify-content: center;
+      // width: 30%;
+      padding: 3rem;
+      padding-top: 2rem;
+    }
+  }
 
-              transparent 80%) ,
-              url(../images/movie_images/deadpool.jpg);
-        width: 45%;
-        background-position: right;
-        background-size: contain;
-        &--form{
-            @include flex-column;
-            justify-content: center;
-            width: 60%;
-            
-        }
-
-        @include respond(tab-land){
-            width: 60%;
-        }
-    
-        @include respond(tab-port){
-            width: 70%;
-        }
-    
-        @include respond(phone){
-            width: 90%;
-        }
-    
-
+  &__container-payment {
+    @extend .form__container-login;
+    background-image: linear-gradient(
+        105deg,
+        rgba($color-white, 1) 0%,
+        rgba($color-white, 1) 20%,
+        rgba($color-white, 1) 60%,
+        rgba($color-white, 0.2) 80%,
+        rgba($color-white, 0.2) 90%,
+        rgba($color-white, 0.1) 100%,
+        transparent 80%
+      ),
+      url(../images/movie_images/deadpool.jpg);
+    width: 45%;
+    background-position: right;
+    background-size: contain;
+    &--form {
+      @include flex-column;
+      justify-content: center;
+      width: 60%;
     }
 
-    &__container-settings{
-       
-        border-radius: 3px;
-        box-shadow: $box-shadow-intense-blr;
-        margin-top: 10vh;
-        width: 30%;
-        background-position: right;
-        background-size: contain;
-        @include flex-column;
-        justify-content: center;
-        align-items: center;
-        padding: 10rem 0;
-        
-        &--img{
-            background-image: url(../images/user.png);
-            background-size: contain;
-            margin: 3rem 0;
-            background-repeat: no-repeat;
-            height: 10rem;
-            width: 10rem;
-        }
-
-        &--links{
-            width: 50%;
-            font-size:$default-font-size;
-            text-align: center;
-            
-        }
+    @include respond(tab-land) {
+      width: 60%;
     }
-    
+
+    @include respond(tab-port) {
+      width: 70%;
+    }
+
+    @include respond(phone) {
+      width: 90%;
+    }
+
+    @include respond(tab-land) {
+      background-size: 80%;
+      margin-top: -10rem;
+      height: 25vh;
+    }
+
+    @include respond(tab-port) {
+      margin-top: -12rem;
+      height: 20vh;
+    }
+
+    @include respond(phone) {
+      background-size: 90%;
+      height: 20vh;
+    }
+  }
+
+  &__image-login {
+    @extend .form__image-adult;
+    background-image: url(../images/movieposter-rem.jpg);
+  }
+
+  &__image-kids {
+    @extend .form__image-adult;
+    background-image: url(../images/kids-rem.png);
+    background-size: 115%;
+  }
+
+  &__container-login {
+    @include flex-row;
+    background-image: linear-gradient(
+        105deg,
+        rgba($color-white, 1) 0%,
+        rgba($color-white, 0.9) 20%,
+        rgba($color-white, 0.8) 50%,
+        rgba($color-white, 0.5) 60%,
+        transparent 80%
+      ),
+      url(../images/poster.jpg);
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    margin-top: 10vh;
+    width: 40%;
+    border-radius: 3px;
+    box-shadow: $box-shadow-intense-blr;
+    justify-content: space-between;
+    padding: 3rem;
+    &--form {
+      @include flex-column;
+      justify-content: center;
+    }
+
+    @include respond(tab-land) {
+      width: 50%;
+    }
+
+    @include respond(tab-port) {
+      width: 60%;
+    }
+
+    @include respond(phone) {
+      width: 80%;
+    }
+  }
+
+  &__container-payment {
+    @extend .form__container-login;
+    background-image: linear-gradient(
+        105deg,
+        rgba($color-white, 1) 0%,
+        rgba($color-white, 1) 20%,
+        rgba($color-white, 1) 60%,
+        rgba($color-white, 0.2) 80%,
+        rgba($color-white, 0.2) 90%,
+        rgba($color-white, 0.1) 100%,
+        transparent 80%
+      ),
+      url(../images/movie_images/deadpool.jpg);
+    width: 45%;
+    background-position: right;
+    background-size: contain;
+    &--form {
+      @include flex-column;
+      justify-content: center;
+      width: 60%;
+    }
+  }
+
+  &__container-settings {
+    border-radius: 3px;
+    box-shadow: $box-shadow-intense-blr;
+    margin-top: 10vh;
+    width: 30%;
+    background-position: right;
+    background-size: contain;
+    @include flex-column;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem 0;
+
+    &--img {
+      background-image: url(../images/user.png);
+      background-size: contain;
+      margin: 3rem 0;
+      background-repeat: no-repeat;
+      height: 10rem;
+      width: 10rem;
+    }
+
+    &--links {
+      width: 50%;
+      font-size: $default-font-size;
+      text-align: center;
+    }
+  }
 }
-
-
-
