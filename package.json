@@ -18,7 +18,8 @@
     "sails-hook-sockets": "^2.0.0",
     "sails-mysql": "^1.0.1",
     "sails-stripe": "0.0.13",
-    "sass": "^1.32.8"
+    "sass": "^1.32.8",
+    "stripe": "^8.141.0"
   },
   "devDependencies": {
     "eslint": "5.16.0",
