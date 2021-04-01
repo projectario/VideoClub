@@ -110,16 +110,20 @@
         }
 
         &-sender{
-            align-self: flex-end;
-            text-align: right;
+            // align-self: flex-end;
+            // text-align: right;
+            align-self: flex-start;
+            text-align: left;
             
         }
 
 
         &-sent{
             // justify-content: flex-end;
-            align-self: flex-end;
-            text-align: right;
+            // align-self: flex-end;
+            // text-align: right;
+            align-self: flex-start;
+            text-align: left;
             background-color: $color-primary;
             color: $color-white;
             border-radius: 30px;
@@ -139,7 +143,6 @@
             background-color: $color-secondary-light;
             color: $color-white;
             border-radius: 30px;
-            // width: 50%;
             padding: 1rem;
 
             @include respond(phone){
