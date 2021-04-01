@@ -112,25 +112,25 @@ $(function() {
   //  ┴ ┴┴ ┴┘└┘─┴┘┴─┘└─┘  ╚═╝╩  └─┘ └┘ └─┘┘└┘ ┴ └─┘
 
   // Handle clicking the `logout` link.
-  // $('.chat-page .logout').click(function() {
+  $('.chat-page .logout').click(function() {
 
-  //   // Update the user's online status.
-  //   io.socket.patch('/user/' + app.loggedInUserId, { online: false }, function(body, response) {
+    // Update the user's online status.
+    io.socket.patch('/user/' + app.loggedInUserId, { online: false }, function(body, response) {
 
-  //     // Handle errors.
-  //     if (response.statusCode !== 200) {
-  //       alert('An error occurred logging you out.  Please try again.');
-  //       return;
-  //     }
+      // Handle errors.
+      if (response.statusCode !== 200) {
+        alert('An error occurred logging you out.  Please try again.');
+        return;
+      }
 
-  //     // Log the user out, and reload the page.
-  //     io.socket.put('/user/logout', {}, function (body, response) {
-  //       window.location.reload();
-  //     });
+      // Log the user out, and reload the page.
+      io.socket.patch('/user/logout', {}, function (body, response) {
+        window.location.reload();
+      });
 
-  //   });
+    });
 
-  // });
+  });
 
   //  ┬ ┬┌┬┐┬┬  ┬┌┬┐┬ ┬  ┌─┐┬ ┬┌┐┌┌─┐┌┬┐┬┌─┐┌┐┌┌─┐
   //  │ │ │ ││  │ │ └┬┘  ├┤ │ │││││   │ ││ ││││└─┐

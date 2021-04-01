@@ -35,11 +35,8 @@ module.exports.routes = {
 
 
   // CHAT
-  'GET /chat': { action: 'account/chat' },
-  // "GET /chat": "account/chat",
-  'PUT /user/login': 'account/chat-login',
-
-
+  'GET /chat': { action: 'chat/chat' },
+  'POST /chat': { action: 'chat/chat' },
 
   // signup
   'GET /signup': { action: 'entrance/view-signup' },
