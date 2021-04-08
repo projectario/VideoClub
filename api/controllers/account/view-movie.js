@@ -11,6 +11,9 @@ module.exports = {
 
     success: {
       viewTemplatePath: 'account/play'
+    },
+    redirect: {
+      responseType: 'redirect'
     }
 
   },
@@ -23,8 +26,14 @@ module.exports = {
 
     let user = await User.findOne({ id: sessionUserId });
     let film = await Film.findOne({ id: this.req.params.id }).meta({ skipRecordVerification: true });
+
+    let rent = await Rent.find({ userId: user.id, filmId: this.req.params.id }).limit(1);
+    sails.log(rent)
+    if (rent.length == 0) {
+      throw { redirect: `/title/${film.id}` };
+    }
     // Respond with view.
-    return { film };
+    return { film, user };
 
   }
 

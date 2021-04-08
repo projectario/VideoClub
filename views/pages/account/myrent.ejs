@@ -1,0 +1,34 @@
+<div class="myEbooksContainer">
+    <div class="eBooksContainer ">
+        <main class="browseBooks">
+            <h3 class="sectionHeader">My Rent</h3>
+            <div class="searchResults">
+                <!-- an eBook to repeat -->
+                <% for(let i=0; i<mylistOfRents.length; i++) {%>
+                    <a class="bookCard" href="play/<%= mylistOfRents[i].id %> ">
+                        <div class="bookDetailsSection">
+                            <p class="bookTitle">
+                                <%= mylistOfRents[i].title %>
+                            </p>
+                            <p class="bookAuthor">
+                                <%= mylistOfRents[i].genre %>
+                            </p>
+                            <div class="bookDetails">
+                                <span class="bookRating">Rating:
+                                    <span class="bookRatingValue">
+                                        <%= mylistOfRents[i].rating %>
+                                    </span>
+                                </span>
+                                <span class="bookBS">
+                                    <%= mylistOfRents[i].releasedDate %>
+                                </span>
+                            </div>
+                        </div>
+
+                    </a>
+                    <% } %>
+                        <!-- end of film -->
+            </div>
+        </main>
+    </div>
+</div>

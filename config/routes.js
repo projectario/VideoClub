@@ -37,8 +37,10 @@ module.exports.routes = {
   'GET /title/:id': { action: 'content/movie-detail' },
 
   //===============   Account   ===========================
+  'GET /myrents': { action: 'account/view-myrents' },
   'GET /payment/:id': { action: 'account/view-payment' },
-  'GET /play': { action: 'account/view-movie' },
+  'POST /payment/:id': { action: 'account/payment' },
+  'GET /play/:id': { action: 'account/view-movie' },
 
 
 
