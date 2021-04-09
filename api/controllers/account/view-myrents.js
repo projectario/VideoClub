@@ -33,15 +33,29 @@ module.exports = {
             myRentIds.push(transaction.filmId)
         });
 
+        // Creating a variable to get rents 
+        let rentTime = await Rent.find({ userId: user.id });
+        let timeCreated = [];
+        for (let i = 0; i < rentTime.length; i++) {
+            timeCreated.push(rentTime[i].createdAt)
+            sails.log(timeCreated)
+            let dateTimeRented = new Date(rentTime[i].createdAt);
+            sails.log(dateTimeRented)
+            let dateTimeExp = new Date(dateTimeRented.setDate(dateTimeRented.getDate() + 3));
+
+            if (dateTimeExp - dateTimeRented >= 3) {
+                for (let i = 0; i < timeCreated.length; i++) {
+                    let userRentId = rentTime[i].id
+                    await Rent.destroy({ userId: user.id, })
+                }
+            }
+            sails.log(dateTimeExp)
+        }
+        //  find a way to get the createdAt value
 
 
-        //  find a way ti get the createdAt value
-        let dateTimeRented = new Date(1617908615520);
-        sails.log(dateTimeRented)
-        let dateTimeExp = new Date(dateTimeRented.setDate(dateTimeRented.getDate() + 3));
 
-        sails.log(dateTimeExp)
-        // if (dateTimeExp) { }
+
 
         // Find my eBooks
         let mylistOfRents = await Film.find({ id: myRentIds }).meta({ skipRecordVerification: true });
@@ -51,3 +65,4 @@ module.exports = {
 
 
 }
+
