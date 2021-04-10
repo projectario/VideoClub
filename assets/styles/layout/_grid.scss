@@ -89,7 +89,7 @@
 
 .movie__list{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   grid-gap: 3rem 2rem;
   grid-auto-rows: 30vh;
   margin: 5vh auto;
@@ -121,7 +121,15 @@
     ". . . . . .";
 
     @include respond(phone){
-      @include flex-column;
+      grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "movie-container__title"
+    "movie-container__desc"
+    "movie-container__trailer"
+    "movie-container__genre"
+    "movie-container__price"
+    "movie-container__btn";
   }
 
     &__logo { grid-area: movie-container__logo; }

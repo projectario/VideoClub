@@ -6,7 +6,7 @@
     &__photo{
         box-shadow: $box-shadow-intense-allaround;
         background-size: cover;
-        background-position: top;
+        background-position: center;
         height: 20vh;
         transition: all 0.4s ease-in-out;
 
@@ -22,11 +22,11 @@
         }
 
         &-3{
-            background-image: url(../images/comp-3.jpg);
+            background-image: url(../images/movies.png);
         }
 
         &-4{
-            background-image: url(../images/comp-1.jpg);
+            background-image: url(../images/kidsmovies.png);
         }
 
         &-5{

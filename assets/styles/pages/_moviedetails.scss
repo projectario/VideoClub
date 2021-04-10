@@ -1,6 +1,6 @@
 .movie-container {
   color: $color-primary;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
   background-color: $color-grey-light-1;
   margin-top: -7vh;
 
@@ -51,19 +51,8 @@
     }
 
     @include respond(phone) {
-      padding-top: 5vh;
-      padding-left: 5vh;
-      background-image: linear-gradient(
-        to top,
-        rgba($color-grey-light-1, 0.7) 0%,
-        rgba($color-grey-light-1, 0.3) 20%,
-        rgba($color-grey-light-1, 0.7) 60%,
-        rgba($color-grey-light-1, 0.5) 80%,
-        rgba($color-grey-light-1, 0.4) 85%,
-        rgba($color-grey-light-1, 0.3) 90%,
-        rgba($color-grey-light-1, 0.2) 100%,
-        transparent 60%
-      );
+      margin-top: 20vh;
+      
       animation: none;
     }
 
@@ -86,6 +75,10 @@
     border-radius: 3px;
     transition: all 0.4s ease-in-out;
     // animation: moveInBottom 0.8s ease;
+    @include respond(phone) {
+      margin-left: 0;
+      
+    }
 
     &:hover {
       transform: translateY(-0.3rem);
