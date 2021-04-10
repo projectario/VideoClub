@@ -20,7 +20,8 @@
     <section class="form__container">
         <form action="/account/email" method="POST" class="form__container-form">
             <input id="email" name="email" class="input" type="email" placeholder="New e-Mail Address"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required oninput="validateEMail()" />
+                value="<%= user.email %>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required
+                oninput="validateEMail()" />
             <button class="btn btn-form">Update E-mail</button>
         </form>
     </section>

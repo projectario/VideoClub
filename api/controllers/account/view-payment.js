@@ -24,7 +24,7 @@ module.exports = {
 
     if (sessionUserId == undefined) throw { redirect: '/login' }
 
-    let user = await User.findOne({ id: sessionUserId });
+    let user = await User.findOne({ id: sessionUserId }).meta({ skipRecordVerification: true });
     let film = await Film.findOne({ id: this.req.params.id }).meta({ skipRecordVerification: true });
     sails.log(film);
     // throw { redirect: '/play' }
