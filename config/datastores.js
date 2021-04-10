@@ -50,7 +50,7 @@ module.exports.datastores = {
     ***************************************************************************/
    
     adapter: 'sails-mysql',
-    url: 'mysql://user:1234@ra1.anystream.eu:1057/chat_test',
+    url: 'mysql://user:1234@ra1.anystream.eu:1057/movieclub',
   },
 
 };
