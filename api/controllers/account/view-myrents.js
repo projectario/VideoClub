@@ -36,21 +36,21 @@ module.exports = {
         // Creating a variable to get rents 
         let rentedMovies = await Rent.find({ userId: user.id });
         let timeCreated = [];
-        for (let i = 0; i < rentMovies.length; i++) {
-            let dateTimeRented = new Date(rentTime[i].createdAt);
-            sails.log(dateTimeRented)
-            let dateTimeExp = new Date(dateTimeRented.setDate(dateTimeRented.getDate() + 3));
-            sails.log(dateTimeExp)
-            timeCreated.push({timeRented: rentedMovies[i].createdAt, id: rentedMovies[i].id})
-            // sails.log(timeCreated)
+        // for (let i = 0; i < rentedMovies.length; i++) {
+        //     let dateTimeRented = new Date(rentTime[i].createdAt);
+        //     sails.log(dateTimeRented)
+        //     let dateTimeExp = new Date(dateTimeRented.setDate(dateTimeRented.getDate() + 3));
+        //     sails.log(dateTimeExp)
+        //     timeCreated.push({ timeRented: rentedMovies[i].createdAt, id: rentedMovies[i].id })
+        //     // sails.log(timeCreated)
 
-            if (new Date() > dateTimeExp) {
-                
-            }
+        //     if (new Date() > dateTimeExp) {
 
-            
-            // sails.log((dateTimeExp.getTime() - dateTimeRented.getTime()).toString())
-        }
+        //     }
+
+
+        //     // sails.log((dateTimeExp.getTime() - dateTimeRented.getTime()).toString())
+        // }
         //  find a way to get the createdAt value
 
 

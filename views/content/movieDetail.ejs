@@ -55,20 +55,20 @@ rgba(247, 247, 247, 1) 100%,
             <%= film.price %>€
           </strong> </div>
         <a href="/payment/<%= film.id %> " class="movie-container__btn">Watch Now</a>
-        
-        <%if(film.bookId !=0) {%> 
+
+        <%if(film.bookId !=0) {%>
           <span>
             <a href="http://localhost:1337/title/<%= film.bookId %> " target="_blank">Read the book</a>
           </span>
-        <% } %>
-        
-        
+          <% } %>
 
-        <div>
-          <!-- <iframe width=" 720" height="415" src=<%=film.url%> frameborder="0"
+
+
+            <div>
+              <!-- <iframe width=" 720" height="415" src=<%=film.url%> frameborder="0"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe> -->
 
-        </div>
+            </div>
 
 </div>

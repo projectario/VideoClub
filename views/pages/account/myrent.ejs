@@ -1,34 +1,37 @@
-<div class="myEbooksContainer">
-    <div class="eBooksContainer ">
-        <main class="browseBooks">
-            <h3 class="sectionHeader">My Rent</h3>
-            <div class="searchResults">
-                <!-- an eBook to repeat -->
-                <% for(let i=0; i<mylistOfRents.length; i++) {%>
-                    <a class="bookCard" href="play/<%= mylistOfRents[i].id %> ">
-                        <div class="bookDetailsSection">
-                            <p class="bookTitle">
-                                <%= mylistOfRents[i].title %>
-                            </p>
-                            <p class="bookAuthor">
-                                <%= mylistOfRents[i].genre %>
-                            </p>
-                            <div class="bookDetails">
-                                <span class="bookRating">Rating:
-                                    <span class="bookRatingValue">
-                                        <%= mylistOfRents[i].rating %>
-                                    </span>
-                                </span>
-                                <span class="bookBS">
-                                    <%= mylistOfRents[i].releasedDate %>
-                                </span>
-                            </div>
-                        </div>
-
-                    </a>
-                    <% } %>
-                        <!-- end of film -->
-            </div>
-        </main>
+<head>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+</head>
+<nav class="navbar">
+    <div class="navbar__logo"><a href="/">VideoClub</a></div>
+    <div class="navbar__faq"><a href="/faq">FAQ</a></div>
+    <div class="navbar__chat"><a href="/chat">Chat</a></div>
+    <div class="navbar__user"><a href="/account"><i class="far fa-user"></i>
+            <%= user.firstName %>
+        </a>
     </div>
-</div>
+    <div class="navbar__login"><a href="/logout">Logout</a></div>
+</nav>
+<main class="container__movies">
+    <h3 class="heading-secondary heading-secondary--movies">My rented Movies</h3>
+    <section class="movie__list">
+        <% for(let i=0; i < mylistOfRents.length; i++) { %>
+            <a href="play/<%= mylistOfRents[i].id %> ">
+                <div class="movie__card" style="background-image: url('<%= mylistOfRents[i].posterUrl %>')">
+                    <div class="movie__card-text">
+                        <p class="movie__card-text--desc">
+                            <%= mylistOfRents[i].description %>
+                        </p>
+                        <p class="movie__card-text--title">
+                            <%= mylistOfRents[i].title %>
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <% } %>
+    </section>
+</main>
