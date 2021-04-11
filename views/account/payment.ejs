@@ -1,28 +1,27 @@
 <head>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-        crossorigin="anonymous" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" />
 </head>
 <nav class="navbar">
-    <div class="navbar__logo"><a href="/">VideoClub</a></div>
-    <div class="navbar__faq"><a href="/faq">FAQ</a></div>
-    <div class="navbar__chat"><a href="/chat">Chat</a></div>
-    <div class="navbar__user"><a href="/"><i class="far fa-user"></i>
-            <%= user.firstName %>
-        </a></div>
-    <div class="navbar__login"><a href="/logout">Logout</a></div>
+  <div class="navbar__logo"><a href="/">VideoClub</a></div>
+  <div class="navbar__faq"><a href="/faq">FAQ</a></div>
+  <div class="navbar__chat"><a href="/chat">Chat</a></div>
+  <div class="navbar__user"><a href="/"><i class="far fa-user"></i>
+      <%= user.firstName %>
+    </a></div>
+  <div class="navbar__login"><a href="/logout">Logout</a></div>
 </nav>
 <main class="signup-page">
-    <section class="form__container-payment">
-        <form action="/payment/<%= film.id %>" method="POST" class="form__container-payment--form">
-            <h4 class="heading-secondary ">Payment</h4>
-            <p class="heading-tertiary">
-
-            </p>
-            <!-- <input id="cardNumber" name="cardNumber" class="input-sm" type="text" placeholder="Card Number"
+  <section class="form__container-payment">
+    <form action="/payment/<%= film.id %>" method="POST" class="form__container-payment--form" style="display: none;">
+      <h4 class="heading-secondary ">Payment</h4>
+      <p class="heading-tertiary">
+      </p>
+      <!-- <input id="cardNumber" name="cardNumber" class="input-sm" type="text" placeholder="Card Number"
                 pattern="[0-9]{13,16}" required title="Enter a valid card number between 13 and 16 numbers">
             <input id="cardHolder" name="cardHolder" class="input-sm" type="text" placeholder="Card holders full name"
                 pattern="[A-Za-z]{5-30}" required title="Enter your Full Name">
@@ -30,16 +29,27 @@
                 title="Enter the CVV of your card" required>
             <input type="text" pattern="(?:0[1-9]|1[0-2])/[0-9]{2}" class="input-sm"
                 title="Enter a date in this format MM/YY" placeholder="Expiration Date MM/YY" required /> -->
-            <p class="heading-secondary error"></p>
-            <input type="hidden" name="filmPrice" value="<%= film.price %>">
-            <a href="" class="btn btn-text">Proceed with PayPal</a>
-            <button class="btn btn-form">Pay <%= film.price%>€</button>
-        </form>
-    </section>
+      <p class="heading-secondary error"></p>
+      <input type="hidden" name="filmPrice" value="<%= film.price %>">
+    </form>
+    <div id="paypal-button-container">
+        <div>
+          <div>
+            <h1>Price Details</h1>
+            <span>Product: <%= film.title %> </span>
+            <hr />
+            <span>Amount: <span class="amount_span"><%= film.price %> €</span> </span>
+          </div>
+        </div>
+      </div>
+    
+  </section>
+
 </main>
 
+
 <script
-  src="https://www.paypal.com/sdk/js?client-id=AUeuOhJDawn5hZNOdpVcjv1t4n3sG1vUCu9kq-SOUzQxTlwNPPib4P8NdHz9Z4MXa4yrBnpiqDgdRWiT&disable-funding=credit,card">
+  src="https://www.paypal.com/sdk/js?client-id=AUeuOhJDawn5hZNOdpVcjv1t4n3sG1vUCu9kq-SOUzQxTlwNPPib4P8NdHz9Z4MXa4yrBnpiqDgdRWiT&disable-funding=credit,card" data-namespace="paypal_sdk">
   // Replace YOUR_CLIENT_ID with your sandbox client ID
 
 </script>
