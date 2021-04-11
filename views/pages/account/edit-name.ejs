@@ -10,8 +10,8 @@
     <div class="navbar__logo"><a href="/">VideoClub</a></div>
     <div class="navbar__faq"><a href="/faq">FAQ</a></div>
     <div class="navbar__chat"><a href="/chat">Chat</a></div>
-    <div class="navbar__user"><a href="/"><i class="far fa-user"></i>
-
+    <div class="navbar__user"><a href="/account"><i class="far fa-user"></i>
+            <%= user.firstName %>
         </a>
     </div>
     <div class="navbar__login"><a href="/logout">Logout</a></div>
@@ -19,11 +19,12 @@
 <main class="signup-page">
     <section class="form__container">
         <form action="/account/name" method="POST" class="form__container-form">
+            <h3 class="heading-secondary--xs">Change Name</h3>
             <input id="firstName" name="firstName" class="input" type="text" placeholder="First Name"
-                pattern="[A-Za-z]{1,15}" minlength="3" maxlength="15" required
+                value="<%= user.firstName %>" pattern="[A-Za-z]{1,15}" minlength="3" maxlength="15" required
                 title="Please fill out the field with 3-15 characters and no numbers" oninput="validateName()" />
             <input id="lastName" name="lastName" class="input" type="text" placeholder="Last Name"
-                pattern="[A-Za-z]{1,15}" minlength="3" maxlength="15" required
+                value="<%= user.lastName %>" pattern="[A-Za-z]{1,15}" minlength="3" maxlength="15" required
                 title="Please fill out the field with 3-15 characters and no numbers" oninput="validateLastName()" />
             <button class="btn btn-form">Update Personal Info</button>
         </form>

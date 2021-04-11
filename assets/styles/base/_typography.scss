@@ -61,6 +61,12 @@ body{
     @include respond(phone){
         font-size: 2rem;
     }
+
+    &--xs{
+        @extend .heading-secondary;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
    
 }
 

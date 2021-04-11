@@ -58,7 +58,7 @@
     @include respond(phone){
         background-position: top;
         height: 100vh;
-        background-size: cover;
+        background-size: 100% 40%;
     }
 
 }

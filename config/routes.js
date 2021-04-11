@@ -20,39 +20,41 @@ module.exports.routes = {
   ***************************************************************************/
 
   'GET /': { action: 'view-homepage' },
+  // signup
+  'GET /signup': { action: 'entrance/view-signup' },
+  'POST /signup': { action: 'entrance/signup' },
   // login
   'GET /login': { action: 'entrance/view-login' },
   'POST /login': { action: 'entrance/login' },
-  // movies
-  'GET /movies': { action: 'content/movies' },
-  'GET /kidsmovies': { action: 'content/kidsmovies' },
-  'GET /title/:id': { action: 'content/movie-detail' },
-
-
-  'GET /payment/:id': { action: 'account/view-payment' },
-  'GET /play': { action: 'account/view-movie' },
-  'GET /faq': { action: 'view-faq' },
-
 
   // CHAT
   'GET /chat': { action: 'chat/chat' },
   'POST /chat': { action: 'chat/chat' },
 
-  // signup
-  'GET /signup': { action: 'entrance/view-signup' },
-  'POST /signup': { action: 'entrance/signup' },
+  // movies
+  'GET /movies': { action: 'content/movies' },
+  'GET /kidsmovies': { action: 'content/kidsmovies' },
+  'GET /title/:id': { action: 'content/movie-detail' },
 
-  //Account settings 
+  //===============   Account   ===========================
+  'GET /myrents': { action: 'account/view-myrents' },
+  'GET /payment/:id': { action: 'account/view-payment' },
+  'POST /payment/:id': { action: 'account/payment' },
+  'GET /play/:id': { action: 'account/view-movie' },
+
+
+
+
+  'GET /faq': { action: 'view-faq' },
+
+  //===============   Account Settings   ==================
   'GET /account': { action: 'account/account-settings' },
-
   //Update password
   'GET /account/password': { action: 'account/settings/view-edit-password' },
   'POST /account/password': { action: 'account/settings/update-password' },
-
   //Update email 
   'GET /account/email': { action: 'account/settings/view-edit-email' },
   'POST /account/email': { action: 'account/settings/update-email' },
-
   //Update name 
   'GET /account/name': { action: 'account/settings/view-edit-name' },
   'POST /account/name': { action: 'account/settings/update-name' },

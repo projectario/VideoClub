@@ -28,7 +28,6 @@ module.exports = {
 
 
   fn: function (inputs, exits, env) {
-    sails.log(this.req.session.userId)
     // If there is no user ID in the session, show the login page.
     if (!env.req.session.userId) {
       return exits.loginPage({});

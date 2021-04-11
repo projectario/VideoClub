@@ -30,7 +30,10 @@ module.exports = {
     // find the film                                        // this so that the doesn't throw warnings
     let film = await Film.findOne({ id: this.req.params.id }).meta({ skipRecordVerification: true });
 
-
+    // let rent = await Rent.find({ userId: user.id, filmId: this.req.params.id });
+    // if (rent) {
+    //   throw { redirect: `/play/${film.id}` }
+    // }
 
 
     // check if the user and the movie have age restrictions
