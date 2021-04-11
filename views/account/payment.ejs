@@ -16,7 +16,16 @@
   <div class="navbar__login"><a href="/logout">Logout</a></div>
 </nav>
 <main class="signup-page">
-  <section class="form__container-payment">
+  <section class="form__container-payment" style="background-image:linear-gradient(105deg,
+  rgba(255, 255, 255, 1) 0%,
+  rgba(255, 255, 255, 1) 20%,
+  rgba(255, 255, 255, 1) 60%,
+  rgba(255, 255, 255, .2) 80%,
+  rgba(255, 255, 255, .2) 90%,
+  rgba(255, 255, 255, .1) 100%,
+
+   transparent 80%) ,
+   url('<%= film.posterUrl %>');">
     <form action="/payment/<%= film.id %>" method="POST" class="form__container-payment--form" style="display: none;">
       <h4 class="heading-secondary ">Payment</h4>
       <p class="heading-tertiary">
@@ -33,23 +42,26 @@
       <input type="hidden" name="filmPrice" value="<%= film.price %>">
     </form>
     <div id="paypal-button-container">
+      <div>
         <div>
-          <div>
-            <h1>Price Details</h1>
-            <span>Product: <%= film.title %> </span>
-            <hr />
-            <span>Amount: <span class="amount_span"><%= film.price %> €</span> </span>
-          </div>
+          <h1>Price Details</h1>
+          <span>Product: <%= film.title %> </span>
+          <hr />
+          <span>Amount: <span class="amount_span">
+              <%= film.price %> €
+            </span> </span>
         </div>
       </div>
-    
+    </div>
+
   </section>
 
 </main>
 
 
 <script
-  src="https://www.paypal.com/sdk/js?client-id=AUeuOhJDawn5hZNOdpVcjv1t4n3sG1vUCu9kq-SOUzQxTlwNPPib4P8NdHz9Z4MXa4yrBnpiqDgdRWiT&disable-funding=credit,card" data-namespace="paypal_sdk">
+  src="https://www.paypal.com/sdk/js?client-id=AUeuOhJDawn5hZNOdpVcjv1t4n3sG1vUCu9kq-SOUzQxTlwNPPib4P8NdHz9Z4MXa4yrBnpiqDgdRWiT&disable-funding=credit,card"
+  data-namespace="paypal_sdk">
   // Replace YOUR_CLIENT_ID with your sandbox client ID
 
-</script>
+  </script>

@@ -10,8 +10,8 @@
     <div class="navbar__logo"><a href="/">VideoClub</a></div>
     <div class="navbar__faq"><a href="/faq">FAQ</a></div>
     <div class="navbar__chat"><a href="/chat">Chat</a></div>
-    <div class="navbar__user"><a href="/"><i class="far fa-user"></i>
-
+    <div class="navbar__user"><a href="/account"><i class="far fa-user"></i>
+            <%= user.firstName %>
         </a>
     </div>
     <div class="navbar__login"><a href="/logout">Logout</a></div>
@@ -19,6 +19,7 @@
 <main class="signup-page">
     <section class="form__container">
         <form action="/account/email" method="POST" class="form__container-form">
+            <h3 class="heading-secondary--xs">Change E-mail</h3>
             <input id="email" name="email" class="input" type="email" placeholder="New e-Mail Address"
                 value="<%= user.email %>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required
                 oninput="validateEMail()" />
