@@ -111,6 +111,8 @@
     }
 
     &__container-payment{
+        height: 300px;
+        font-size: 16px;
         @extend .form__container-login;
         background-image:linear-gradient(105deg,
              rgba($color-white, 1) 0%,
@@ -128,8 +130,8 @@
         &--form{
             @include flex-column;
             justify-content: center;
-            width: 60%;
-            
+            align-content: center;
+            width: 60%;            
         }
 
         @include respond(tab-land){
@@ -142,6 +144,8 @@
     
         @include respond(phone){
             width: 90%;
+            height: 300px;
+            font-size: 16px;
         }
     
 

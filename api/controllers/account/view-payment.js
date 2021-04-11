@@ -4,7 +4,7 @@ module.exports = {
   friendlyName: 'View payment',
 
 
-  description: 'Display "Payment" page.',
+  description: 'Display Payment page.',
 
 
   exits: {
@@ -15,21 +15,29 @@ module.exports = {
     redirect: {
       responseType: 'redirect'
     }
-
   },
 
 
   fn: async function () {
     let sessionUserId = this.req.session.userId;
-
-    if (sessionUserId == undefined) throw { redirect: '/login' }
-
-    let user = await User.findOne({ id: sessionUserId }).meta({ skipRecordVerification: true });
+    let user;
+    if (sessionUserId) {
+      user = await User.findOne({ id: sessionUserId }).meta({ skipRecordVerification: true });
+    }
     let film = await Film.findOne({ id: this.req.params.id }).meta({ skipRecordVerification: true });
+    let rent = await Rent.find({ userId: user.id, filmId: this.req.params.id }).limit(1);
+    // sails.log(rent)
+    if (rent.length !== 0) {
+      throw { redirect: `/play/${film.id}` }
+    }
 
-    // throw { redirect: '/play' }
-    // Respond with view.
-    return { film, user };
+    // return { redirect: `/payment/${film.id}` }
+
+    // Find the movie the user wants to rent
+
+
+
+    return { user, film };
 
 
   }
