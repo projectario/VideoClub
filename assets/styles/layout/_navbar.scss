@@ -9,7 +9,7 @@
     top: 0;
     z-index: 10;
 
-    &__logo, &__faq, &__login, &__chat, &__user{ 
+    &__logo, &__faq, &__login, &__chat, &__user, &__myrents{ 
         // @include flex-row;
         font-size: $default-font-size;
         letter-spacing: .5rem;

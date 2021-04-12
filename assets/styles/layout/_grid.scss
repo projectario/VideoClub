@@ -73,17 +73,18 @@
 
 .navbar{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 7vh;
   gap: 0px 0px;
   grid-template-areas:
-    "navbar__logo . . . . . . navbar__chat navbar__faq navbar__user navbar__login";
+    "navbar__logo . . . . . . navbar__chat navbar__faq navbar__myrents navbar__user navbar__login";
 
   &__logo { grid-area: navbar__logo; }
   &__faq { grid-area: navbar__faq; }
   &__login { grid-area: navbar__login; }
   &__chat { grid-area: navbar__chat; }
   &__user { grid-area: navbar__user; }
+  &__myrents { grid-area: navbar__myrents; }
 
 }
 
