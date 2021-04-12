@@ -28,7 +28,6 @@ module.exports = {
     let film = await Film.findOne({ id: this.req.params.id }).meta({ skipRecordVerification: true });
 
     let rent = await Rent.find({ userId: user.id, filmId: this.req.params.id }).limit(1);
-    sails.log(rent)
     if (rent.length == 0) {
       throw { redirect: `/title/${film.id}` };
     }

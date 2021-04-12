@@ -24,7 +24,7 @@ A web MVC project for the PeopleCERT Coding Bootcamp (group project)
 
 The website has two different user roles. The adult user, and the child user.
 
-- The logged in user in authenticated and encrypted with bcrypt, that way even one with access to the database can see what it is.
+- The logged in user in authenticated and encrypted with bcrypt, that way even one with access to the database can't see what it is.
 Once the user logs in, he/she can have access a list of movies that are available for renting. The user can then click on a movie, and will be redirected
 to the movie-detail page that contains the movies' info like, description, price, rating, and the movie trailer. To proceed the user must click
 the "Watch Now" button and will be redirected to a checkout page, powered by Paypal. After the payment is confirmed that user is redirected to a page that
@@ -52,4 +52,37 @@ contains said movie.
 * [Andreas Koutroulis](https://github.com/AndreasCtrl)
 * [Nektarios Banousi](https://github.com/BanNektarios)
 
+
+
+# MovieClub Project
+
+A group project for the PeopleCERT Coding Bootcamp
+
+### The technologies we used: 
+
+a [Sails v1](https://sailsjs.com) application
+a [MySQL](https://www.npmjs.com/package/sails-mysql) application
+a [Sass](https://www.npmjs.com/package/sass) application
+a [bcryptjs](https://www.npmjs.com/package/bcryptjs) application
+a [Paypal-Checkout](https://developer.paypal.com/docs/business/develop/design-guidelines/#button-placement)
+
+
+Table of contents
+
+1. a [How to Install]
+2. 
+3
+4
+5
+
+### How to Install
+
+Illustrations
+
+pics?
+pics?
+pics?
+
+
+Scope of functionalities 
 
