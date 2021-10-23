@@ -66,23 +66,3 @@ a [Sass](https://www.npmjs.com/package/sass) application
 a [bcryptjs](https://www.npmjs.com/package/bcryptjs) application
 a [Paypal-Checkout](https://developer.paypal.com/docs/business/develop/design-guidelines/#button-placement)
 
-
-Table of contents
-
-1. a [How to Install]
-2. 
-3
-4
-5
-
-### How to Install
-
-Illustrations
-
-pics?
-pics?
-pics?
-
-
-Scope of functionalities 
-
